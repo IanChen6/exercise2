@@ -21,3 +21,22 @@ Fri 10 Nov 2017 18:09:34 ERROR log_01.py 40 9848 error
 Fri 10 Nov 2017 18:09:34 CRITICAL log_01.py 41 9848 critical
 Fri 10 Nov 2017 18:09:47 WARNING use_logger.py 6 9756 aaa
 Tue 14 Nov 2017 16:08:03 WARNING use_logger.py 6 15692 aaa
+Mon 18 Dec 2017 15:16:05 ERROR log_01.py 40 2136 error
+Mon 18 Dec 2017 15:16:05 CRITICAL log_01.py 41 2136 critical
+Mon 18 Dec 2017 15:18:26 WARNING log_01.py 39 13724 warn
+Mon 18 Dec 2017 15:18:26 ERROR log_01.py 40 13724 error
+Mon 18 Dec 2017 15:18:26 CRITICAL log_01.py 41 13724 critical
+Mon 18 Dec 2017 15:18:50 WARNING log_01.py 39 10400 warn
+Mon 18 Dec 2017 15:18:50 ERROR log_01.py 40 10400 error
+Mon 18 Dec 2017 15:18:50 CRITICAL log_01.py 41 10400 critical
+Mon 18 Dec 2017 15:19:13 WARNING log_01.py 39 11196 warn
+Mon 18 Dec 2017 15:19:13 ERROR log_01.py 40 11196 error
+Mon 18 Dec 2017 15:19:13 CRITICAL log_01.py 41 11196 critical
+Mon 18 Dec 2017 15:23:44 WARNING log_01.py 39 15224 warn
+Mon 18 Dec 2017 15:23:44 ERROR log_01.py 40 15224 error
+Mon 18 Dec 2017 15:23:44 CRITICAL log_01.py 41 15224 critical
+Mon 18 Dec 2017 15:25:26 DEBUG log_01.py 37 14008 debug message
+Mon 18 Dec 2017 15:25:26 INFO log_01.py 38 14008 info
+Mon 18 Dec 2017 15:25:26 WARNING log_01.py 39 14008 warn
+Mon 18 Dec 2017 15:25:26 ERROR log_01.py 40 14008 error
+Mon 18 Dec 2017 15:25:26 CRITICAL log_01.py 41 14008 critical

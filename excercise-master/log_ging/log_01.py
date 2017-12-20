@@ -20,7 +20,7 @@ def create_logger(level=logging.DEBUG):
 # create file handler
     log_path = './log.log'
     fh = logging.FileHandler(log_path)
-    fh.setLevel(logging.WARN)
+    fh.setLevel(level)
 
 # CREATE FORMATTER
     fmt = "%(asctime)s %(levelname)s %(filename)s %(lineno)d %(process)d %(message)s"
@@ -33,7 +33,7 @@ def create_logger(level=logging.DEBUG):
     return logger
 # print log info
 if __name__=="__main__":
-    logger=create_logger(logging.ERROR)
+    logger=create_logger(level=logging.DEBUG)
     logger.debug('debug message')
     logger.info("info")
     logger.warning("warn")

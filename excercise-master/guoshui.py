@@ -1,4 +1,6 @@
 # -*- coding:utf-8 -*-
+import re
+
 __author__ = 'IanChen'
 # selinium需要专用的driver来调用浏览器
 import os
@@ -24,31 +26,6 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 # browser = webdriver.Chrome(executable_path='D:/BaiduNetdiskDownload/chromedriver.exe')#添加driver的路径
 
 def save_png(browser, path):
-    browser.execute_script("""
-      (function () {
-        var y = 0;
-        var step = 100;
-        window.scroll(0, 0);
-
-        function f() {
-          if (y < document.body.scrollHeight) {
-            y += step;
-            window.scroll(0, y);
-            setTimeout(f, 50);
-          } else {
-            window.scroll(0, 0);
-            document.title += "scroll-done";
-          }
-        }
-
-        setTimeout(f, 1000);
-      })();
-    """)
-    for i in range(30):
-        if "scroll-done" in browser.title:
-            break
-        time.sleep(1)
-    # browser.save_screenshot(path)
     browser.get_screenshot_as_file(path)
 
 
@@ -92,7 +69,9 @@ def login():
         # captcha=input('input captcha')
         time_l = time.localtime(int(time.time()))
         time_l = time.strftime("%Y-%m-%d %H:%M:%S", time_l)
-        login_data = {"nsrsbh": "440300771615767", "nsrpwd": "06fc3bcbd18ac83d45a8c369b7800d2e724f80c7",
+        # login_data = {"nsrsbh": "440300771615767", "nsrpwd": "06fc3bcbd18ac83d45a8c369b7800d2e724f80c7",
+        #               "tagger": tagger, "redirectURL": "", "time": time_l}
+        login_data = {"nsrsbh": "440300754285743", "nsrpwd": "b68a74d266ec48553be35a8af4318e57e176b85b",
                       "tagger": tagger, "redirectURL": "", "time": time_l}
         resp = session.post(url=login_url, headers=headers, data=json.dumps(login_data))
         if resp.json()['success'] == True:
@@ -109,13 +88,24 @@ def parse_biaoge(browser):
     # 表格信息爬取
     content = browser.page_source
     root = etree.HTML(content)
-    select = root.xpath('//table[@id="mini-grid-table-bodysbqkGrid"]/tbody/tr')
+    pages=root.xpath('//div[@class="mini-pager-right"]/text()')
+    numbers=re.search(r'每页 10 条, 共 (\d+) 条',pages[0]).group(1)
+    numbers=int(numbers)-1
+    next_page=numbers//10
     a = -1
-    for i in select[1:]:
-        shuizhong = i.xpath('.//text()')
-        a += 1
-        parse_shenbaobiao(browser, a)
-        print(shuizhong)
+    for page in range(next_page+1):
+        content = browser.page_source
+        root = etree.HTML(content)
+        select = root.xpath('//table[@id="mini-grid-table-bodysbqkGrid"]/tbody/tr')
+
+        for i in select[1:]:
+            shuizhong = i.xpath('.//text()')
+            a += 1
+            if "查询申报表" in shuizhong:
+                print("需要点击查询")
+                parse_shenbaobiao(browser, a)
+            print(shuizhong)
+        browser.find_element_by_xpath('//*[@id="mini-33"]/span').click()
 
 
 # 申报表截图
@@ -123,22 +113,26 @@ def parse_shenbaobiao(browser, a):
     browser.find_element_by_xpath('//*[@id="mini-25${}"]//a[1]'.format(a)).click()
     time.sleep(3)
     g_content = browser.page_source
-    browser.find_element_by_class_name('mini-tools-max').click()
-    frame_element = browser.find_element_by_css_selector('.mini-window iframe')
-    browser.switch_to_frame(frame_element)
-    time.sleep(1)
-    content_p = browser.page_source
-    root2 = etree.HTML(content_p)
-    select2 = root2.xpath('//table[@class="mini-tabs-header"]//span')
-    b = 0
-    for i in select2:
-        b += 1
-        browser.find_element_by_id('mini-1${}'.format(b)).click()
+    if "查询失败" in g_content:
+        browser.find_element_by_xpath('//div[@class="mini-messagebox-buttons"]//span').click()
+    elif "查询失败" not in g_content:
+        browser.find_element_by_class_name('mini-tools-max').click()
+        frame_element = browser.find_element_by_css_selector('.mini-window iframe')
+        browser.switch_to_frame(frame_element)
+        time.sleep(1)
+        content_p = browser.page_source
+        root2 = etree.HTML(content_p)
+        select2 = root2.xpath('//table[@class="mini-tabs-header"]//span')
+        b = 0
+        for i in select2:
+            b += 1
+            browser.find_element_by_id('mini-1${}'.format(b)).click()
+            time.sleep(2)
         # browser.save_screenshot('国税申报表截图{}{}.png'.format(a, b))
-        save_png(browser, '国税申报表截图{}{}.png'.format(a, b))
-    browser.switch_to.default_content()
-    browser.find_element_by_class_name('mini-tools-close').click()
-    time.sleep(3)
+            save_png(browser, '国税申报表截图{}{}.png'.format(a, b))
+        browser.switch_to.default_content()
+        browser.find_element_by_class_name('mini-tools-close').click()
+        time.sleep(3)
 
 
 # 国税缴款
@@ -199,6 +193,7 @@ def dishui(browser):
     index = 0
     time.sleep(2)
     for i in select:
+        c=browser.page_source
         browser.find_element_by_xpath(
             '//table[@id="ysbjl_table"]/tbody/tr[@data-index="{}"]//input[@name="btSelectItem"]'.format(index)).click()
         browser.find_element_by_css_selector('#print').click()
@@ -212,8 +207,8 @@ def dishui(browser):
         # for c_window in windows:
         #     if c_window != window1:
         #         browser.switch_to_window(c_window)
-        #         html=browser.page_source
-        #         time.sleep(3)
+        #         # html=browser.page_source
+        #         # time.sleep(3)
         #         # pdfkit.from_string(html,"申报表详情{}.png".format(pzxh))
         #         browser.save_screenshot("申报表详情{}.png".format(pzxh))
         #         browser.close()
@@ -297,14 +292,19 @@ if __name__ == '__main__':
         f.close()
     # chrome_options = Options()
     # chrome_options.add_argument("--window-size=1280,2000")
-    # browser = webdriver.Chrome(executable_path='D:/BaiduNetdiskDownload/chromedriver.exe')  # 添加driver的路径
+    #设置无头chrome
+    # options=webdriver.ChromeOptions()
+    # options.add_argument("headless")
+    # options.add_argument("window-size=1200x1600")
+    #
+    # browser = webdriver.Chrome(executable_path='D:/BaiduNetdiskDownload/chromedriver.exe',chrome_options=options)  # 添加driver的路径
     dcap = dict(DesiredCapabilities.PHANTOMJS)
     dcap["phantomjs.page.settings.userAgent"] = (
         'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36')
     dcap["phantomjs.page.settings.loadImages"] = True
     browser = webdriver.PhantomJS(executable_path='D:/BaiduNetdiskDownload/phantomjs-2.1.1-windows/bin/phantomjs.exe',
                                   desired_capabilities=dcap)  # 添加driver的路径
-    # browser.maximize_window()
+    browser.maximize_window()
     browser.viewportSize = {'width': 2200, 'height': 2200}
     browser.set_window_size(1020, 1600)  # Chrome无法使用这功能
     index_url = "http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/myoffice/myoffice.html"
@@ -335,12 +335,12 @@ if __name__ == '__main__':
     # 国税缴款查询
     jk_url = 'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/djsxx/jk_jsxxcx.html'
     browser.get(url=jk_url)
-    parse_jiaokuan(browser)
+    # parse_jiaokuan(browser)
 
     # 地税查询
     ds_url = 'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/djsxx/djsxx.html'
     browser.get(url=ds_url)
-    dishui(browser)
+    # dishui(browser)
 
     end_time=time.time()
     expended_time=end_time-start_time

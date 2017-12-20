@@ -21,17 +21,22 @@ import json
 #
 #     return table
 #
-#
 # binaryImage = im.point(initTable(), '1')
 # binaryImage.show()
 # tmp=pytesseract.image_to_string(im)
 # print(tmp)
 
-with open('captcha.jpg','rb') as f:
-    base64_data=str(base64.b64encode(f.read()))
-    base64_data=base64_data[2:-1]
+# with open('captcha.jpg','rb') as f:
+#     base64_data=str(base64.b64encode(f.read()))
+#     base64_data=base64_data[2:-1]
+#
+#     post_data={"a": 1,"b":base64_data}
+#     post_data=json.dumps({"a": 1,"b": base64_data})
+#     res=requests.post(url="http://192.168.18.113:8002/mycode.ashx",data=post_data)
+#     print(res.text)
 
-    post_data={"a": 1,"b":base64_data}
-    post_data=json.dumps({"a": 1,"b": base64_data})
-    res=requests.post(url="http://192.168.18.113:8002/mycode.ashx",data=post_data)
-    print(res.text)
+i=11//6
+print(i)
+for i in range(1):
+    print(i)
+
