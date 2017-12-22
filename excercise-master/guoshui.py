@@ -110,7 +110,9 @@ def parse_biaoge(browser):
 
 # 申报表截图
 def parse_shenbaobiao(browser, a):
+    # browser.find_element_by_xpath('//*[@id="mini-25${}"]//a[1]'.format(a)).click()
     browser.find_element_by_xpath('//*[@id="mini-25${}"]//a[1]'.format(a)).click()
+
     time.sleep(3)
     g_content = browser.page_source
     if "查询失败" in g_content:
@@ -124,12 +126,17 @@ def parse_shenbaobiao(browser, a):
         root2 = etree.HTML(content_p)
         select2 = root2.xpath('//table[@class="mini-tabs-header"]//span')
         b = 0
+        ct=browser.page_source
         for i in select2:
             b += 1
-            browser.find_element_by_id('mini-1${}'.format(b)).click()
-            time.sleep(2)
+            try:
+                browser.find_element_by_id('mini-1${}'.format(b)).click()
+                time.sleep(2)
         # browser.save_screenshot('国税申报表截图{}{}.png'.format(a, b))
-            save_png(browser, '国税申报表截图{}{}.png'.format(a, b))
+                save_png(browser, '国税申报表截图{}{}.png'.format(a, b))
+            except Exception as e:
+                print("申报表打不开")
+                continue
         browser.switch_to.default_content()
         browser.find_element_by_class_name('mini-tools-close').click()
         time.sleep(3)
@@ -324,12 +331,27 @@ if __name__ == '__main__':
     browser.get(url=shenbao_url)
 
     time.sleep(3)
+    browser.find_element_by_css_selector("#sz .mini-buttonedit-input").clear()
+    browser.find_element_by_css_selector("#sz .mini-buttonedit-input").send_keys("增值税")
     browser.find_element_by_css_selector("#sbrqq .mini-buttonedit-input").clear()
-    browser.find_element_by_css_selector("#sbrqq .mini-buttonedit-input").send_keys('20170101')
+    browser.find_element_by_css_selector("#sbrqq .mini-buttonedit-input").send_keys('20170901')
     browser.find_element_by_css_selector("#stepnext .mini-button-text").click()
     time.sleep(3)
-    # browser.save_screenshot('国税申报结果截图.png')
-    save_png(browser, '国税申报结果截图.png')
+    save_png(browser, '国税增值税申报结果截图.png')
+
+    parse_biaoge(browser)
+    browser.find_element_by_css_selector("#sz .mini-buttonedit-input").clear()
+    browser.find_element_by_css_selector("#sz .mini-buttonedit-input").send_keys("财务报表")
+    browser.find_element_by_css_selector("#stepnext .mini-button-text").click()
+    time.sleep(3)
+    save_png(browser, '国税财务报表申报结果截图.png')
+
+    parse_biaoge(browser)
+    browser.find_element_by_css_selector("#sz .mini-buttonedit-input").clear()
+    browser.find_element_by_css_selector("#sz .mini-buttonedit-input").send_keys("所得税")
+    browser.find_element_by_css_selector("#stepnext .mini-button-text").click()
+    time.sleep(3)
+    save_png(browser, '国税所得税申报结果截图.png')
     parse_biaoge(browser)
 
     # 国税缴款查询
