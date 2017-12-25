@@ -23,7 +23,7 @@ import re
 headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"}
 postdata={"BatchID":45,
 "BatchYear":2017,
-"BatchMonth":7,
+"BatchMonth":1,
 "CompanyID":18282900,
 "CustomerID":9,
 # "TaxId":440300754285743,
