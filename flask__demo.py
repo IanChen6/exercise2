@@ -66,69 +66,88 @@
 # # pool.close()
 # # pool.join()
 #
-from pdfminer.converter import PDFPageAggregator
-from pdfminer.layout import LTTextBoxHorizontal, LAParams
-from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
-from pdfminer.pdfinterp import PDFTextExtractionNotAllowed
-from pdfminer.pdfparser import PDFParser, PDFDocument
+# from pdfminer.converter import PDFPageAggregator
+# from pdfminer.layout import LTTextBoxHorizontal, LAParams
+# from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
+# from pdfminer.pdfinterp import PDFTextExtractionNotAllowed
+# from pdfminer.pdfparser import PDFParser, PDFDocument
+#
+# fp = open("pdfparse.pdf", "rb")
+#
+# # 用文件对象创建一个pdf文档分析器
+# parse_pdf = PDFParser(fp)
+#
+# # 创建一个PDF文档
+# doc = PDFDocument()
+#
+# parse_pdf.set_document(doc)
+# doc.set_parser(parse_pdf)
+#
+# doc.initialize()
+#
+# # 检测文档是否提供txt转换，不提供就忽略
+# if not doc.is_extractable:
+#     raise PDFTextExtractionNotAllowed
+# else:
+#     # 创建PDf资源管理器 来管理共享资源
+#     rsrcmgr = PDFResourceManager()
+#
+#     # 创建一个PDF参数分析器
+#     laparams = LAParams()
+#
+#     # 创建聚合器
+#     device = PDFPageAggregator(rsrcmgr, laparams=laparams)
+#
+#     # 创建一个PDF页面解释器对象
+#     interpreter = PDFPageInterpreter(rsrcmgr, device)
+#
+#     # 循环遍历列表，每次处理一页的内容
+#     # doc.get_pages() 获取page列表
+#     for page in doc.get_pages():
+#         # 使用页面解释器来读取
+#         interpreter.process_page(page)
+#
+#         # 使用聚合器获取内容
+#         layout = device.get_result()
+#
+#         results_last=""
+#         # 这里layout是一个LTPage对象 里面存放着 这个page解析出的各种对象 一般包括LTTextBox, LTFigure, LTImage, LTTextBoxHorizontal 等等 想要获取文本就获得对象的text属性，
+#         for out in layout:
+#             # 判断是否含有get_text()方法，图片之类的就没有
+#             # if hasattr(out,"get_text"):
+#             if isinstance(out, LTTextBoxHorizontal):
+#                 results = out.get_text()
+#                 if results_last=="税（费）种\n":
+#                     print("results: " + results)
+#
+#                     sz = results.strip("").split("\n")
+#                     print(sz)
+#                 if "7=5×6" in results:
+#                     print("results: " + results)
+#                     jn=results.strip("").split("\n")
+#                     jn.pop(0)
+#                     print(jn)
+#                 results_last=results
+# pdf_dict={}
+# for i in range(len(sz)-3):
+#     pdf_dict[sz[i]]=jn[i]
+# print(pdf_dict)
+# import json
+# js=json.dumps({"1":"abc","b":"3323d"})
+# js=json.loads(js)
+# dm=js.copy()
+# dm.update(pdf_dict)
+# print(dm)
+# ll=tuple(dm.items())
+# print(ll)
+# pdfjson=json.dumps(dm,ensure_ascii=False)
+# print(pdfjson)
+#
+# s='\xa0\n     1693\n    '
+# out="".join(s.strip())
+# print(out)
 
-fp = open("pdfparse.pdf", "rb")
 
-# 用文件对象创建一个pdf文档分析器
-parse_pdf = PDFParser(fp)
-
-# 创建一个PDF文档
-doc = PDFDocument()
-
-parse_pdf.set_document(doc)
-doc.set_parser(parse_pdf)
-
-doc.initialize()
-
-# 检测文档是否提供txt转换，不提供就忽略
-if not doc.is_extractable:
-    raise PDFTextExtractionNotAllowed
-else:
-    # 创建PDf资源管理器 来管理共享资源
-    rsrcmgr = PDFResourceManager()
-
-    # 创建一个PDF参数分析器
-    laparams = LAParams()
-
-    # 创建聚合器
-    device = PDFPageAggregator(rsrcmgr, laparams=laparams)
-
-    # 创建一个PDF页面解释器对象
-    interpreter = PDFPageInterpreter(rsrcmgr, device)
-
-    # 循环遍历列表，每次处理一页的内容
-    # doc.get_pages() 获取page列表
-    for page in doc.get_pages():
-        # 使用页面解释器来读取
-        interpreter.process_page(page)
-
-        # 使用聚合器获取内容
-        layout = device.get_result()
-
-        results_last=""
-        # 这里layout是一个LTPage对象 里面存放着 这个page解析出的各种对象 一般包括LTTextBox, LTFigure, LTImage, LTTextBoxHorizontal 等等 想要获取文本就获得对象的text属性，
-        for out in layout:
-            # 判断是否含有get_text()方法，图片之类的就没有
-            # if hasattr(out,"get_text"):
-            if isinstance(out, LTTextBoxHorizontal):
-                results = out.get_text()
-                if results_last=="税（费）种\n":
-                    print("results: " + results)
-
-                    sz = results.strip("").split("\n")
-                    print(sz)
-                if "7=5×6" in results:
-                    print("results: " + results)
-                    jn=results.strip("").split("\n")
-                    jn.pop(0)
-                    print(jn)
-                results_last=results
-pdf_dict={}
-for i in range(len(sz)-3):
-    pdf_dict[sz[i]]=jn[i]
-print(pdf_dict)
+import os
+if  not os.path.exists("dishui/aa"):
+    os.mkdir('dishui/aa')

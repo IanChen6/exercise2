@@ -26,16 +26,16 @@ postdata={"BatchID":45,
 "BatchMonth":1,
 "CompanyID":18282900,
 "CustomerID":9,
-# "TaxId":440300754285743,
-"TaxId":440300771615767,
-"TaxPwd":83093013,
-
-# "TaxPwd":77766683,
+"TaxId":440300754285743,
+# "TaxId":440300771615767,
+# "TaxPwd":83093013,
+#
+"TaxPwd":77766683,
 'jobname':'工程1',
 'jobparams':"工作中"
           }
-re=requests.post(url="http://120.79.65.131:8000/search-post",data=postdata)
-# re=requests.post(url="http://127.0.0.1:8000/search-post",data=postdata)
+# re=requests.post(url="http://120.79.65.131:8000/search-post",data=postdata)
+re=requests.post(url="http://127.0.0.1:8000/search-post",data=postdata)
 print(re.text)
 
 # import time
