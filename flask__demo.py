@@ -148,6 +148,24 @@
 # print(out)
 
 
-import os
-if  not os.path.exists("dishui/aa"):
-    os.mkdir('dishui/aa')
+# import os
+# if  not os.path.exists("dishui/aa"):
+#     os.mkdir('dishui/aa')
+import requests
+
+headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"}
+postdata={"BatchID":5590,
+"BatchYear":2017,
+"BatchMonth":1,
+"CompanyID":18282900,
+"CustomerID":9,
+# "TaxId":440300754285743,
+# "TaxPwd":77766683,
+"TaxId":440300771615767,
+"TaxPwd":83093013,
+'jobname':'工程1',
+'jobparams':"工作中"
+          }
+# re=requests.post(url="http://120.79.65.131:8000/search-post",data=postdata)
+re=requests.post(url="http://127.0.0.1:8000/search-post",data=postdata)
+print(re.text)

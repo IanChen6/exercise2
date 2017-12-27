@@ -27,10 +27,9 @@ postdata={"BatchID":45,
 "CompanyID":18282900,
 "CustomerID":9,
 "TaxId":440300754285743,
+"TaxPwd":77766683,
 # "TaxId":440300771615767,
 # "TaxPwd":83093013,
-#
-"TaxPwd":77766683,
 'jobname':'工程1',
 'jobparams':"工作中"
           }
