@@ -156,7 +156,7 @@ import requests
 headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"}
 postdata={"BatchID":5590,
 "BatchYear":2017,
-"BatchMonth":1,
+"BatchMonth":8,
 "CompanyID":18282900,
 "CustomerID":9,
 # "TaxId":440300754285743,
@@ -167,5 +167,5 @@ postdata={"BatchID":5590,
 'jobparams':"工作中"
           }
 # re=requests.post(url="http://120.79.65.131:8000/search-post",data=postdata)
-re=requests.post(url="http://127.0.0.1:8000/search-post",data=postdata)
+re=requests.post(url="http://127.0.0.1:8000/spider/",data=postdata)
 print(re.text)
