@@ -21,20 +21,35 @@ import re
 
 # #爬虫post测试：
 headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"}
+# postdata={"BatchID":45,
+# "BatchYear":2017,
+# "BatchMonth":3,
+# "CompanyID":18282900,
+# "CustomerID":9,
+# "TaxId":440300754285743,
+# "TaxPwd":77766683,
+# # "TaxId":440300771615767,
+# # "TaxPwd":83093013,
+# 'jobname':'工程1',
+# 'jobparams':"工作中",
+# 'Type':'CUSTOMERINFO'
+#           }
 postdata={"BatchID":45,
 "BatchYear":2017,
 "BatchMonth":3,
 "CompanyID":18282900,
 "CustomerID":9,
-"TaxId":440300754285743,
-"TaxPwd":77766683,
+"CustomerName":'深圳市大百科饰品有限公司',
+"SocialID":440301112440967,
 # "TaxId":440300771615767,
 # "TaxPwd":83093013,
 'jobname':'工程1',
-'jobparams':"工作中"
+'jobparams':"工作中",
+'Type':'CUSTOMERINFO'
           }
+
 # re=requests.post(url="http://120.79.65.131:8080/search-post",data=postdata)
-re=requests.post(url="http://127.0.0.1:8000/spider/",data=postdata)
+re=requests.post(url="http://120.79.65.131:8000/spider/",data=postdata)
 print(re.text)
 
 # import time

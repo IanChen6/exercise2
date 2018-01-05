@@ -151,21 +151,41 @@
 # import os
 # if  not os.path.exists("dishui/aa"):
 #     os.mkdir('dishui/aa')
-import requests
+# import requests
+#
+# headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"}
+# postdata={"BatchID":5590,
+# "BatchYear":2017,
+# "BatchMonth":8,
+# "CompanyID":18282900,
+# "CustomerID":9,
+# # "TaxId":440300754285743,
+# # "TaxPwd":77766683,
+# "TaxId":440300771615767,
+# "TaxPwd":83093013,
+# 'jobname':'工程1',
+# 'jobparams':"工作中"
+#           }
+# # re=requests.post(url="http://120.79.65.131:8000/spider/",data=postdata)
+# re=requests.post(url="http://127.0.0.1:8000/spider/",data=postdata)
+# print(re.text)
+# import json
+#
+# import requests
+#
+# captcha_url = 'http://dzswj.szgs.gov.cn/tipCaptcha?0.9322011782378214'
+#
+# res = requests.get(url=captcha_url).json()
+# image = res['image']
+# image="data:image/jpg;base64,"+image
+# tip=res["tipMessage"]
+#
+#
+#
+# post_data = {"a": 1, "b": image}
+# post_data = json.dumps({"a": 1, "b": image})
+# res = requests.post(url="http://39.108.112.203:8002/mycode.ashx", data=post_data, timeout=30)
+# print(res.text)
 
-headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"}
-postdata={"BatchID":5590,
-"BatchYear":2017,
-"BatchMonth":8,
-"CompanyID":18282900,
-"CustomerID":9,
-# "TaxId":440300754285743,
-# "TaxPwd":77766683,
-"TaxId":440300771615767,
-"TaxPwd":83093013,
-'jobname':'工程1',
-'jobparams':"工作中"
-          }
-# re=requests.post(url="http://120.79.65.131:8000/search-post",data=postdata)
-re=requests.post(url="http://127.0.0.1:8000/spider/",data=postdata)
-print(re.text)
+a="123"
+b=str(a)
