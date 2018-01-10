@@ -77,24 +77,16 @@ options.add_argument('disable-infobars')
 options.add_argument("--start-maximized")
 # D:/BaiduNetdiskDownload/chromedriver.exe
 try:
-    browser1 = webdriver.Chrome(executable_path='chromedriver.exe', chrome_options=options)
-    browser1.get(url='http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/login/login.html')
-    wait = ui.WebDriverWait(browser1, 8)
+    browser = webdriver.Chrome(executable_path='chromedriver.exe', chrome_options=options)
+    browser.get(url='http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/login/login.html')
+    wait = ui.WebDriverWait(browser, 8)
     wait.until(lambda browser1: browser1.find_element_by_css_selector("#shlogin"))
-    browser1.find_element_by_xpath('//li[@id="shlogin"]').click()
-    browser1.find_element_by_xpath("//*[@id='nsrsbh$text']").send_keys(user)  # send_keys：实现往框中输入内容
-    browser1.find_element_by_xpath("//*[@id='nsrpwd$text']").send_keys(pwd)
+    browser.find_element_by_xpath('//li[@id="shlogin"]').click()
+    browser.find_element_by_xpath("//*[@id='nsrsbh$text']").send_keys(user)  # send_keys：实现往框中输入内容
+    browser.find_element_by_xpath("//*[@id='nsrpwd$text']").send_keys(pwd)
 except:
     try:
         print("浏览器启动异常")
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.connect(('192.168.18.101', 25532))
-        bb = "@1035:{}".format(customerid)
-        l = len(bb)
-        for i in range((128 - l)):
-            bb += " "
-        s.send(bytes(bb.encode('utf8')))
-        s.close()
         sys.exit()
     except Exception as e:
         print("socket服务端连接失败")
@@ -102,18 +94,10 @@ except:
         sys.exit()
 while True:
     try:
-        page = browser1.page_source
+        page = browser.page_source
     except:
         try:
             print("浏览器异常关闭")
-            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            s.connect(('192.168.18.101', 25532))
-            bb = "@1035:{}".format(customerid)
-            l = len(bb)
-            for i in range((128 - l)):
-                bb += " "
-            s.send(bytes(bb.encode('utf8')))
-            s.close()
             sys.exit()
         except Exception as e:
             print(e)
@@ -125,42 +109,12 @@ while True:
     except:
         try:
             print("浏览器异常关闭")
-            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            s.connect(('192.168.18.101', 25532))
-            bb = "@1035:{}".format(customerid)
-            l = len(bb)
-            for i in range((128 - l)):
-                bb += " "
-            s.send(bytes(bb.encode('utf8')))
-            s.close()
             sys.exit()
         except Exception as e:
             print(e)
             print("socket服务端连接失败")
             sys.exit()
     if '我的定制功能' in page:
-        dlck = browser1.get_cookies()
-        browser1.quit()
-        options.add_argument("headless")
-        options.add_argument("window-size=1200x1600")
-        browser = webdriver.Chrome(executable_path='chromedriver.exe', chrome_options=options)
-        browser.get(url='http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/login/login.html')
-        browser.delete_all_cookies()
-        for d in dlck:
-            browser.add_cookie(d)
-        wait = ui.WebDriverWait(browser, 8)
-        # socket通信
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        # 建立连接:
-        try:
-            s.connect(('192.168.18.101', 25532))
-            aa = "@1034:{}".format(customerid)
-            l = len(aa)
-            for i in range((128 - l)):
-                aa += " "
-            s.send(bytes(aa.encode('utf8')))
-        except:
-            print("连接失败")
         try:
             browser.get('http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/myoffice/myoffice.html')
             try:
@@ -272,8 +226,8 @@ while True:
                                         browser.find_element_by_xpath('//*[@id="A21$text"]').send_keys(hwyj)
                                     except:
                                         print("无法输入")
-                                fwsb = browser.find_element_by_xpath('//*[@id="B22$text"]').text
-                                hwsb = browser.find_element_by_xpath('//*[@id="A22$text"]').text
+                                fwsb = browser.find_element_by_xpath('//*[@id="B22"]/input').get_attribute("value")
+                                hwsb = browser.find_element_by_xpath('//*[@id="A22"]/input').get_attribute("value")
                                 sbje = float(fwsb) + float(hwsb)
                                 browser.find_element_by_css_selector('#nextStep').click()
                                 time.sleep(0.2)
@@ -291,8 +245,8 @@ while True:
                                     browser.find_element_by_css_selector('#nextStep').click()
                                     frame_element = browser.find_element_by_css_selector('#sjyzmWindow iframe')
                                     browser.switch_to_frame(frame_element)
-                                    browser.find_element_by_xpath('//*[@onclick="normalSubmit()"]').click()
-                                    time.sleep(10)
+                                    # browser.find_element_by_xpath('//*[@onclick="normalSubmit()"]').click()#不申报
+                                    # time.sleep(10)
                                 elif "不通过" in ycdb:
                                     dbbtg = etree.HTML(ycdb)
                                     dbbtg1 = dbbtg.xpath('//*[@id="mini-212"]//table/tbody/tr')
@@ -304,15 +258,6 @@ while True:
                                     gsparams = (customerid, "GS", "小规模增值税", fail_json)
                                     insert_db(host, port, db, "[dbo].[Python_Serivce_ShenZhen_TaxApplyCheckError]",
                                               gsparams)
-                                    bb = "@1035:{}".format(customerid)
-                                    l = len(bb)
-                                    for i in range((128 - l)):
-                                        bb += " "
-                                    try:
-                                        s.send(bytes(bb.encode('utf8')))
-                                        s.close()
-                                    except:
-                                        print("socket连接失败")
                                     browser.quit()
                                     sys.exit()
 
@@ -341,15 +286,6 @@ while True:
                         gsjson = json.dumps(gsdict, ensure_ascii=False)
                         gsparams = (customerid, "GS", "小规模增值税", gsjson)
                         insert_db(host, port, db, "[dbo].[Python_Serivce_ShenZhen_TaxApplyUpdate]", gsparams)
-                        bb = "@1035:{}".format(customerid)
-                        l = len(bb)
-                        for i in range((128 - l)):
-                            bb += " "
-                        try:
-                            s.send(bytes(bb.encode('utf8')))
-                            s.close()
-                        except:
-                            print("连接超时")
                         browser.quit()
                         sys.exit()
                 a += 1
@@ -434,7 +370,7 @@ while True:
                         sbprice = djprice + dfprice + dcprice
                         browser.switch_to.default_content()
                         cc = browser.page_source
-                        browser.find_element_by_link_text("正式申报").click()
+                        # browser.find_element_by_link_text("正式申报").click() #不申报
                         browser.switch_to_frame('layui-layer-iframe3')
                         pdsb = browser.page_source
                         if "正式申报成功" in pdsb:
@@ -462,18 +398,9 @@ while True:
 
                         break
                     b += 1
-                bb = "@1035:{}".format(customerid)
-                l = len(bb)
-                for i in range((128 - l)):
-                    bb += " "
-                try:
-                    s.send(bytes(bb.encode('utf8')))
-                    s.close()
-                except:
-                    print("连接超时")
-                browser.quit()
-                sys.exit()
-                break
+                # browser.quit()
+                # sys.exit()
+                # break
             except Exception as e:
                 print("地税申报失败")
                 print(e)
@@ -510,8 +437,10 @@ while True:
 
 
                 class guoshui(object):
-                    def __init__(self, user, pwd, batchid, batchyear, batchmonth, companyid, customerid):
+                    def __init__(self, user, pwd, batchid, batchyear, batchmonth, companyid, customerid, browser, host,
+                                 port, db):
                         self.user = user
+                        self.browser = browser
                         self.pwd = pwd
                         self.batchid = batchid
                         self.batchyear = batchyear
@@ -521,7 +450,7 @@ while True:
                             self.batchmonth = batchmonth
                         self.companyid = companyid
                         self.customerid = customerid
-                        self.host, self.port, self.db = get_db(companyid)
+                        self.host, self.port, self.db = host, port, db
                         if batchmonth != 0:
                             monthRange = calendar.monthrange(batchyear, batchmonth)
                             self.days = monthRange[1]
@@ -688,107 +617,86 @@ while True:
                             print("数据库插入完成")
                         print("截取国税申报信息已完成")
 
-                        # 申报表截图
-                        def parse_shenbaobiao(self, browser, a, month):
-                            browser.find_element_by_xpath('//*[@id="mini-25${}"]//a[1]'.format(a)).click()
-                            try:
-                                print("申报表截图")
-                                wait = ui.WebDriverWait(browser, 5)
-                                wait.until(lambda browser: browser.find_element_by_css_selector(".mini-window iframe"))
-                                browser.find_element_by_class_name('mini-tools-max').click()
-                                frame_element = browser.find_element_by_css_selector('.mini-window iframe')
-                                browser.switch_to_frame(frame_element)
-                                # time.sleep(1)
-                                content_p = browser.page_source
-                                root2 = etree.HTML(content_p)
-                                select2 = root2.xpath('//table[@class="mini-tabs-header"]//span')
-                                b = 0
-                                img_list2 = []
-                                for i in select2:
-                                    b += 1
-                                    try:
-                                        browser.find_element_by_id('mini-1${}'.format(b)).click()
-                                        shenbaobiao = self.save_png(browser,
-                                                                    '{}/国税申报表截图{}{}{}月.png'.format(self.user, a, b,
-                                                                                                   month))
-                                        img_list2.append(shenbaobiao)
-                                    except Exception as e:
-                                        print("出现错误:", e)
-                                        continue
-                                print("申报表截图完成")
-                                browser.switch_to.default_content()
-                                print("返回主页面")
+                    # 申报表截图
+                    def parse_shenbaobiao(self, browser, a, month):
+                        browser.find_element_by_xpath('//*[@id="mini-grid-table-bodysbqkGrid"]//tr//a[1]').click()
+                        try:
+                            print("申报表截图")
+                            wait = ui.WebDriverWait(browser, 5)
+                            wait.until(lambda browser: browser.find_element_by_css_selector(".mini-window iframe"))
+                            browser.find_element_by_class_name('mini-tools-max').click()
+                            frame_element = browser.find_element_by_css_selector('.mini-window iframe')
+                            browser.switch_to_frame(frame_element)
+                            # time.sleep(1)
+                            content_p = browser.page_source
+                            root2 = etree.HTML(content_p)
+                            select2 = root2.xpath('//table[@class="mini-tabs-header"]//span')
+                            b = 0
+                            img_list2 = []
+                            for i in select2:
+                                b += 1
+                                try:
+                                    browser.find_element_by_id('mini-1${}'.format(b)).click()
+                                    shenbaobiao = self.save_png(browser,
+                                                                '{}/国税申报表截图{}{}{}月.png'.format(self.user, a, b,
+                                                                                               month))
+                                    img_list2.append(shenbaobiao)
+                                except Exception as e:
+                                    print("出现错误:", e)
+                                    continue
+                            print("申报表截图完成")
+                            browser.switch_to.default_content()
+                            print("返回主页面")
 
-                                browser.find_element_by_class_name('mini-tools-close').click()
-                                print("关闭当前申报表")
+                            browser.find_element_by_class_name('mini-tools-close').click()
+                            print("关闭当前申报表")
 
-                                return img_list2
-                            except Exception as e:
-                                print(e)
-                                return []
+                            return img_list2
+                        except Exception as e:
+                            print(e)
+                            return []
 
-                        # 国税缴款
-                        def parse_jiaokuan(self, browser):
-                            print("截取国税缴款信息")
-                            # 输入查询日期
-                            browser.find_element_by_css_selector("#sssqq .mini-buttonedit-input").clear()
-                            browser.find_element_by_css_selector("#sssqq .mini-buttonedit-input").send_keys(
-                                '{}{}01'.format(self.batchyear, self.batchmonth))
-                            browser.find_element_by_css_selector("#sssqz .mini-buttonedit-input").clear()
-                            browser.find_element_by_css_selector("#sssqz .mini-buttonedit-input").send_keys(
-                                '{}{}{}'.format(self.batchyear, self.batchmonth, self.days))
+                    # 国税缴款
+                    def parse_jiaokuan(self, browser):
+                        print("截取国税缴款信息")
+                        # 输入查询日期
+                        browser.find_element_by_css_selector("#sssqq .mini-buttonedit-input").clear()
+                        browser.find_element_by_css_selector("#sssqq .mini-buttonedit-input").send_keys(
+                            '{}{}01'.format(self.batchyear, self.batchmonth))
+                        browser.find_element_by_css_selector("#sssqz .mini-buttonedit-input").clear()
+                        browser.find_element_by_css_selector("#sssqz .mini-buttonedit-input").send_keys(
+                            '{}{}{}'.format(self.batchyear, self.batchmonth, self.days))
+                        try:
                             browser.find_element_by_css_selector("#mini-37 .mini-button-text").click()
-                            wait = ui.WebDriverWait(browser, 10)
-                            wait.until(
-                                lambda browser: browser.find_element_by_css_selector("#stepnext .mini-button-text"))
-                            browser.find_element_by_css_selector("#stepnext .mini-button-text").click()
-                            img = self.save_png(browser, '{}/缴税信息.png'.format(self.user))
-                            iml = []
-                            iml.append(img)
+                        except Exception as e:
+                            print(e)
+                            print("没有弹窗")
+                        wait = ui.WebDriverWait(browser, 10)
+                        wait.until(
+                            lambda browser: browser.find_element_by_css_selector("#stepnext .mini-button-text"))
+                        browser.find_element_by_css_selector("#stepnext .mini-button-text").click()
+                        img = self.save_png(browser, '{}/缴税信息.png'.format(self.user))
+                        iml = []
+                        iml.append(img)
 
-                            # 表格信息爬取
-                            content = browser.page_source
-                            root = etree.HTML(content)
-                            select = root.xpath('//table[@id="mini-grid-table-bodyyjscx"]/tbody/tr')
-                            for i in select[1:]:
-                                jsxx = i.xpath('.//text()')
-                                print(jsxx)
-                                print(jsxx)
-                                params = (
-                                    self.batchid, self.batchyear, self.batchmonth, self.companyid, self.customerid,
-                                    str(jsxx[1]),
-                                    str(jsxx[2]),
-                                    str(jsxx[3]), str(jsxx[4]), str(jsxx[5]), str(jsxx[6]), str(jsxx[7]), str(jsxx[8]),
-                                    str(jsxx[9]),
-                                    self.img2json(iml))
-                                print(params)
-                                self.insert_db("[dbo].[Python_Serivce_GSTaxChargeShenZhen_Add]", params)
-                            print("截取国税缴款信息已完成")
-
-                    # 前往地税
-                    def qwdishui(self, browser):
-                        try_times = 0
-                        while try_times <= 3:
-                            ds_url = 'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/djsxx/djsxx.html'
-                            browser.get(url=ds_url)
-                            print("开始登录地税")
-                            wait = ui.WebDriverWait(browser, 10)
-                            try:
-                                wait.until(
-                                    lambda browser: browser.find_element_by_css_selector("#mini-29 .mini-button-text"))
-                                browser.find_element_by_css_selector("#mini-29 .mini-button-text").click()
-                            except:
-                                print("无该弹窗")
-                            try:
-                                browser.find_element_by_css_selector("#mini-27 .mini-button-text").click()
-                            except:
-                                print("无该弹窗")
-                            browser.find_element_by_xpath("//a[@href='javascript:gotoDs()']").click()
-                            try:
-                                self.dishui(browser)
-                                return True
-                            except:
-                                try_times += 1
+                        # 表格信息爬取
+                        content = browser.page_source
+                        root = etree.HTML(content)
+                        select = root.xpath('//table[@id="mini-grid-table-bodyyjscx"]/tbody/tr')
+                        for i in select[1:]:
+                            jsxx = i.xpath('.//text()')
+                            print(jsxx)
+                            print(jsxx)
+                            params = (
+                                self.batchid, self.batchyear, self.batchmonth, self.companyid, self.customerid,
+                                str(jsxx[1]),
+                                str(jsxx[2]),
+                                str(jsxx[3]), str(jsxx[4]), str(jsxx[5]), str(jsxx[6]), str(jsxx[7]), str(jsxx[8]),
+                                str(jsxx[9]),
+                                self.img2json(iml))
+                            print(params)
+                            self.insert_db("[dbo].[Python_Serivce_GSTaxChargeShenZhen_Add]", params)
+                        print("截取国税缴款信息已完成")
 
                     def dishui(self, browser):
                         print("截取地税申报信息")
@@ -801,10 +709,11 @@ while True:
                                 browser.switch_to_window(c_window)
                         # 查询个人所得税
                         wait = ui.WebDriverWait(browser, 10)
-                        wait.until(
-                            lambda browser: browser.find_element_by_css_selector(
-                                "#layui-layer1 div.layui-layer-btn a"))  # timeout
-                        browser.find_element_by_css_selector('#layui-layer1 div.layui-layer-btn a').click()
+                        # wait.until(
+                        #     lambda browser: browser.find_element_by_css_selector(
+                        #         "#layui-layer1 div.layui-layer-btn a"))  # timeout
+                        # browser.find_element_by_css_selector('#layui-layer1 div.layui-layer-btn a').click()
+                        browser.switch_to.default_content()
                         browser.find_element_by_css_selector('#menu_110000_110109').click()
                         time.sleep(2)
                         browser.switch_to_frame('qyIndex')
@@ -1028,6 +937,58 @@ while True:
                                 self.insert_db("[dbo].[Python_Serivce_DSTaxApplyShenZhen_Add]", params)
                                 index += 1
                         print("截取地税申报信息已完成")
+                        #未申报查询
+                        gbds = browser.window_handles
+                        dq = browser.current_window_handle
+                        for s in gbds:
+                            if s != dq:
+                                browser.switch_to_window(s)
+                                browser.close()
+                                browser.switch_to_window(dq)
+                        browser.switch_to_default_content()
+                        browser.switch_to_frame('qyIndex')
+                        browser.find_element_by_css_selector('#menu3_14_110201').click()
+                        browser.switch_to_frame('qymain')
+                        page = browser.page_source
+                        # browser.switch_to_window(window1)
+                        wait = ui.WebDriverWait(browser, 10)
+                        wait.until(lambda browser: browser.find_element_by_css_selector('#txtStart'))
+                        ds_start_date = browser.find_element_by_xpath('//*[@id="txtStart"]')
+                        ds_start_date.clear()
+                        ds_start_date.send_keys('2015-01-01')
+                        ds_end_date = browser.find_element_by_xpath("//*[@id='txtEnd']")
+                        ds_end_date.clear()
+                        ds_end_date.send_keys('{}-{}-{}'.format(self.batchyear, self.batchmonth, self.days))
+                        # time.sleep(1)
+                        browser.find_element_by_css_selector('#query').click()
+                        time.sleep(2)
+                        jietu = self.save_png(browser, '{}/地税未申报查询.png'.format(self.user))
+                        # 缴款表格信息爬取
+                        content = browser.page_source
+                        root = etree.HTML(content)
+                        select = root.xpath('//table[@id="dataTab"]/tbody/tr')
+
+                        for i in select:
+                            jkxx = i.xpath('.//text()')
+                            if "没有符合条件的数据" in jkxx:
+                                break
+                            taxjson={}
+                            taxjson["结果截图"]=jietu
+                            taxjson["征收项目"]=jkxx[0]
+                            taxjson["开始日期"]=jkxx[1]
+                            taxjson["结束日期"]=jkxx[2]
+                            taxjson["申报期限"]=jkxx[3]
+                            taxjson["征收代理方式"]=jkxx[4]
+                            taxjson["是否逾期"]=jkxx[5]
+                            taxjson["操作"]=jkxx[6]
+                            taxjson=json.dumps(taxjson,ensure_ascii=False)
+                            params = (
+                                self.batchid, self.batchyear, self.batchmonth, self.companyid, self.customerid,
+                                taxjson)
+                            print(params)
+                            self.insert_db("[dbo].[Python_Service_DSTaxExpireShenZhen_Add] ", params)
+
+
                         # 已缴款查询
                         gbds = browser.window_handles
                         dq = browser.current_window_handle
@@ -1063,8 +1024,11 @@ while True:
                         pz_t = 0
                         jietulist = []
                         jietulist.append(jietu)
+                        # if len
                         for i in select:
                             jkxx = i.xpath('.//text()')
+                            if "没有符合条件的数据" in jkxx:
+                                break
                             pz = jkxx[0]
                             print(jkxx)
                             pz_l.append(pz)
@@ -1122,26 +1086,53 @@ while True:
                             self.insert_db("[dbo].[Python_Serivce_DSTaxChargeShenZhen_Add]", params)
                         print("截取地税缴款信息已完成")
 
-                    def excute_spider(browser, self):
+                    def excute_spider(self):
                         try:
+                            # 地税查询
+                            try:
+                                self.dishui(browser)
+                            except:
+                                print("地税查询失败")
+                                params = (
+                                    self.batchid, self.customerid, "python_job", "地税查询异常")
+                                self.insert_db("[dbo].[Python_Serivce_Job_Exception]", params)
+                            # 国税
                             index_url = "http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/myoffice/myoffice.html"
-                            browser.get(url=index_url)
+                            self.browser.get(url=index_url)
                             shenbao_url = 'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/cxdy/sbcx.html'
-                            browser.get(url=shenbao_url)
+                            self.browser.get(url=shenbao_url)
                             time.sleep(3)
-                            self.shuizhongchaxun(browser)
+                            try:
+                                self.shuizhongchaxun(browser)
+                            except:
+                                print("国税申报查询失败")
+                                params = (
+                                    self.batchid, self.customerid, "python_job", "国税申报查询异常")
+                                self.insert_db("[dbo].[Python_Serivce_Job_Exception]", params)
                             # 国税缴款查询
                             jk_url = 'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/djsxx/jk_jsxxcx.html'
-                            browser.get(url=jk_url)
-                            self.parse_jiaokuan(browser)
-                            # 地税查询
-                            self.qwdishui(browser)
+                            self.browser.get(url=jk_url)
+                            try:
+                                self.parse_jiaokuan(browser)
+                            except:
+                                print("国税缴款查询失败")
+                                params = (
+                                    self.batchid, self.customerid, "python_job", "国税缴款查询异常")
+                                self.insert_db("[dbo].[Python_Serivce_Job_Exception]", params)
                             print("爬取完成")
                             print("全部爬取完成")
-                            browser.quit()
-                        except:
+                            self.browser.quit()
+                            sys.exit()
+                        except Exception as e:
+                            print(e)
                             pass
-                gs=guoshui(user=user, pwd=pwd, batchid=11111, batchmonth=1, batchyear=2018, companyid=companyid,customerid=customerid)
+
+
+                gs = guoshui(user=user, pwd=pwd, batchid=11111, batchmonth=1, batchyear=2018, companyid=companyid,
+                             customerid=customerid, browser=browser, host=host, port=port, db=db)
+                gs.excute_spider()
+                browser.quit()
+                sys.exit()
             except Exception as e:
                 print(e)
 
@@ -1164,4 +1155,3 @@ while True:
             fwyj = float(fwyj)
             hwms = float(hwms)
             hwyj = float(hwyj)
-
