@@ -67,15 +67,11 @@ def insert_db(host, port, db, sql, params):
     conn.commit()
     cur.close()
 
-
 host, port, db = get_db(companyid)
-
 options = webdriver.ChromeOptions()
-# options.add_argument("headless")
-# options.add_argument("window-size=1200x1600")
 options.add_argument('disable-infobars')
 options.add_argument("--start-maximized")
-# D:/BaiduNetdiskDownload/chromedriver.exe
+
 try:
     browser = webdriver.Chrome(executable_path='chromedriver.exe', chrome_options=options)
     browser.get(url='http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/login/login.html')
