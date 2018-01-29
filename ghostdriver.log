@@ -1,18 +1,5 @@
-[INFO  - 2018-01-11T10:23:48.386Z] GhostDriver - Main - running on port 12683
-[INFO  - 2018-01-11T10:23:49.468Z] Session [838eb580-f6b9-11e7-91f6-c7d711430b8d] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36","webSecurityEnabled":true}
-[INFO  - 2018-01-11T10:23:49.468Z] Session [838eb580-f6b9-11e7-91f6-c7d711430b8d] - page.customHeaders:  - {}
-[INFO  - 2018-01-11T10:23:49.468Z] Session [838eb580-f6b9-11e7-91f6-c7d711430b8d] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"},"phantomjs.page.settings.userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36","phantomjs.page.settings.loadImages":true}
-[INFO  - 2018-01-11T10:23:49.468Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 838eb580-f6b9-11e7-91f6-c7d711430b8d
-[INFO  - 2018-01-11T10:24:00.088Z] Session [838eb580-f6b9-11e7-91f6-c7d711430b8d] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36","webSecurityEnabled":true}
-[INFO  - 2018-01-11T10:24:00.088Z] Session [838eb580-f6b9-11e7-91f6-c7d711430b8d] - page.customHeaders:  - {}
-[ERROR - 2018-01-11T10:24:00.359Z] Session [838eb580-f6b9-11e7-91f6-c7d711430b8d] - page.onError - msg: TypeError: null is not an object (evaluating 'mini.decode(wqhdxxData).HdxxResponseVo')
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2018-01-11T10:24:00.359Z] Session [838eb580-f6b9-11e7-91f6-c7d711430b8d] - page.onError - stack:
-  (anonymous function) (http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/sb/wqsb/wqysbtjsb.js:28)
-  c (http://dzswj.szgs.gov.cn/BsfwtWeb/lib/jquery/jquery.min.js:4)
-  fireWith (http://dzswj.szgs.gov.cn/BsfwtWeb/lib/jquery/jquery.min.js:4)
-  ready (http://dzswj.szgs.gov.cn/BsfwtWeb/lib/jquery/jquery.min.js:4)
-  q (http://dzswj.szgs.gov.cn/BsfwtWeb/lib/jquery/jquery.min.js:4)
-
-  phantomjs://platform/console++.js:263 in error
+[INFO  - 2018-01-26T06:57:52.375Z] GhostDriver - Main - running on port 2424
+[INFO  - 2018-01-26T06:57:53.443Z] Session [3afd2af0-0266-11e8-a230-7392bbe0bf8f] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36","webSecurityEnabled":true}
+[INFO  - 2018-01-26T06:57:53.443Z] Session [3afd2af0-0266-11e8-a230-7392bbe0bf8f] - page.customHeaders:  - {}
+[INFO  - 2018-01-26T06:57:53.443Z] Session [3afd2af0-0266-11e8-a230-7392bbe0bf8f] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"},"phantomjs.page.settings.loadImages":true,"phantomjs.page.settings.userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"}
+[INFO  - 2018-01-26T06:57:53.443Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 3afd2af0-0266-11e8-a230-7392bbe0bf8f

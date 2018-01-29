@@ -30,7 +30,8 @@ headers = {'Accept': 'application/json, text/javascript, */*; q=0.01',
            }
 
 yzm_url = 'https://www.szcredit.org.cn/web/WebPages/Member/CheckCode.aspx?'
-yzm = requests.get(url=yzm_url, headers=headers)
+session=requests.session()
+yzm = session.get(url=yzm_url, headers=headers)
 
 # 处理验证码
 with open("yzm.jpg", "wb") as f:
@@ -41,51 +42,54 @@ with open('yzm.jpg', 'rb') as f:
     base64_data = "data:image/jpg;base64," + base64_data[2:-1]
     post_data = {"a": 2, "b": base64_data}
     post_data = json.dumps({"a": 2, "b": base64_data})
-    res = requests.post(url="http://39.108.112.203:8002/mycode.ashx", data=post_data)
+    res = session.post(url="http://39.108.112.203:8002/mycode.ashx", data=post_data)
     # print(res.text)
     f.close()
 
 postdata = {'action': 'GetEntList',
-            'keyword': '440301106895802',
+            'keyword': '深圳市艺林达纸品有限公司',
             'type': 'query',
             'ckfull': 'false',
             'yzmResult': res.text
             }
-resp1 = requests.post(url='https://www.szcredit.org.cn/web/AJax/Ajax.ashx', headers=headers, data=postdata)
+resp1 = session.post(url='https://www.szcredit.org.cn/web/AJax/Ajax.ashx', headers=headers, data=postdata)
 resp = resp1.json()
+# if len(resp['resultlist']!=0):
+#     result = resp['resultlist']
 result = resp['resultlist']
 if resp1 is not None and resp1.status_code == 200 and result:
     result_dict = result[0]
     print(result_dict["RecordID"])  # 获取ID
     detai_url = 'https://www.szcredit.org.cn/web/gspt/newGSPTDetail3.aspx?ID={}'.format(result_dict["RecordID"])
-    detail = requests.get(url=detai_url, headers=headers, timeout=30)
-    detail.encoding='gbk'
+    detail = session.get(url=detai_url, headers=headers, timeout=30)
+    detail.encoding=detail.apparent_encoding
     root = etree.HTML(detail.text)  # 将request.content 转化为 Element
 
-    # title = root.xpath('//*[@id="Table31"]//li[@class="current"]')
-    # t_list = []
-    # for t in title:
-    #     tt = t.xpath(".//a[1]/text()")
-    #     print(tt[0])
-    #     t_list.append(tt[0])
-    #
-    # tb_list = []
-    # tb = root.xpath('//*[@id="Table31"]//table')#抓取table31
-    # for i in tb:
-    #     data_json = []
-    #     tb_detail = i.xpath(".//tr")
-    #     for j in tb_detail:
-    #         t = j.xpath('./td//text()')
-    #         data_json.append(t)
-    #         # data_json[t[0]]=t[1]
-    #     # data_json=json.dumps(data_json,ensure_ascii=False)
-    #     # print(data_json)
-    #     tb_list.append(data_json)
-    #
-    # data_dict = {}
-    # for i in range(len(t_list)):
-    #     data_dict[t_list[i]] = tb_list[i]
-    # print(data_dict)
+    title = root.xpath('//*[@id="Table31"]//li[@class="current"]')
+    t_list = []
+    for t in title:
+        tt = t.xpath(".//a[1]/text()")
+        print(tt[0])
+        t_list.append(tt[0])
+
+    tb_list = []
+    tb = root.xpath('//*[@id="Table31"]//table')#抓取table31
+    for i in tb:
+        data_json = []
+        tb_detail = i.xpath(".//tr")
+        for j in tb_detail:
+            t = j.xpath('./td//text()')
+            # lianjie = j.xpath('./td//@href')
+            data_json.append(t)
+            # data_json[t[0]]=t[1]
+        # data_json=json.dumps(data_json,ensure_ascii=False)
+        # print(data_json)
+        tb_list.append(data_json)
+
+    data_dict = {}
+    for i in range(len(t_list)):
+        data_dict[t_list[i]] = tb_list[i]
+    print(data_dict)
 
     # if "登记备案信息" in data_dict.keys():
     #     d1 = {}
@@ -100,20 +104,20 @@ if resp1 is not None and resp1.status_code == 200 and result:
     #     # dm["登记备案信息"] = d1
     #     # print(dm)
     #
-    # if "股东登记信息" in data_dict.keys():
-    #     d1 = {}
-    #     get_data = data_dict["股东登记信息"]
-    #     d2 = {}
-    #     for i in get_data[1:]:
-    #         d3 = {}
-    #         d3['出资额'] = i[1]
-    #         d3['出资比例'] = i[2]
-    #         d2[i[0]] = d3
-    #     d1['股东名称'] = d2
-    #     data_dict["股东登记信息"] = d1
-    #     # dm = {}
-    #     # dm["股东登记信息"] = d1
-    #     # print(dm)
+    if "股东登记信息" in data_dict.keys():
+        d1 = {}
+        get_data = data_dict["股东登记信息"]
+        d2 = {}
+        for i in get_data[1:]:
+            d3 = {}
+            d3['出资额'] = i[1]
+            d3['出资比例'] = i[2]
+            d2[i[0]] = d3
+        d1['股东名称'] = d2
+        data_dict["股东登记信息"] = d1
+        dm = {}
+        dm["股东登记信息"] = d1
+        print(dm)
     #
     # if "成员登记信息" in data_dict.keys():
     #     d1 = {}
@@ -330,4 +334,46 @@ if resp1 is not None and resp1.status_code == 200 and result:
 
     except:
         print("No exist")
+
+    all_urls=[]
+    all_gd=[]
+    gdjg={}
+    gdxx=root.xpath('//*[@id="tb_1"]//tr')
+    for i in gdxx[1:]:
+        lianjie=i.xpath('.//@href')[0]
+        lianjie=lianjie.strip()
+        gdm=i.xpath('./td[1]/text()')[0]
+        print(lianjie)
+        all_urls.append(lianjie)
+        all_gd.append(gdm)
+    for j in range(len(all_urls)):
+        clean_dict={}
+        gd_url="https://www.szcredit.org.cn/web/gspt/{}".format(all_urls[j])
+        gd_resp=requests.get(url=gd_url,headers=headers)
+        s=gd_resp.text
+        if isinstance(s,str):
+            s.encode(gd_resp.apparent_encoding)
+
+        # gd_resp.encoding = 'utf8'
+        root = etree.HTML(s)
+        gdxq = root.xpath('//table[@class="list"]//tr')
+        a=1
+        for xq in gdxq[1:]:
+            sb={}
+            xx=xq.xpath('.//text()')
+            clean=[]
+            for s in xx:
+                s=s.strip()
+                if s.strip and s is not "":
+                    clean.append(s)
+            print(clean)
+            sb["qymc"]=clean[0]
+            sb["qyzch"]=clean[1]
+            sb["qylx"]=clean[2]
+            sb["clrq"]=clean[3]
+            clean_dict["{}".format(a)]=sb
+            a+=1
+        gdjg[all_gd[j]]=clean_dict
+    print(gdjg)
+
 

@@ -3,9 +3,9 @@ __author__ = 'IanChen'
 
 import requests
 import re
-from bs4 import BeautifulSoup
+# from bs4 import BeautifulSoup
 from lxml import etree
-import pymysql
+# import pymysql
 import random
 from get_proxy import get_all_proxie
 
@@ -14,18 +14,18 @@ MYSQL_DBNAME = "zhihu"
 MYSQL_USER = "root"
 MYSQL_PASSWORD = "1029384756"
 MYSQL_Port = "3306"
-conn = pymysql.connect(host=MYSQL_HOST, user=MYSQL_USER, passwd=MYSQL_PASSWORD, db=MYSQL_DBNAME, port=3306,
-                       charset="utf8")
-cursor = conn.cursor()
-create_tb = """
- CREATE TABLE IF NOT EXISTS wangyi2(
-    id INT UNSIGNED AUTO_INCREMENT,
-    title VARCHAR(200),
-    url VARCHAR(200),
-    PRIMARY KEY(id)
-)
-    """
-cursor.execute(create_tb)
+# conn = pymysql.connect(host=MYSQL_HOST, user=MYSQL_USER, passwd=MYSQL_PASSWORD, db=MYSQL_DBNAME, port=3306,
+#                        charset="utf8")
+# cursor = conn.cursor()
+# create_tb = """
+#  CREATE TABLE IF NOT EXISTS wangyi2(
+#     id INT UNSIGNED AUTO_INCREMENT,
+#     title VARCHAR(200),
+#     url VARCHAR(200),
+#     PRIMARY KEY(id)
+# )
+#     """
+# cursor.execute(create_tb)
 
 url = 'http://www.163.com/'
 session=requests.session()
@@ -35,7 +35,8 @@ proxy_list=get_all_proxie()
 proxy=proxy_list[random.randint(0,len(proxy_list)-1)]
 session.proxies=proxy
 
-resp = session.get(url)
+# resp = session.get(url)
+resp=session.get('http://www.ip138.com')
 # soup= BeautifulSoup(resp.content,'html.parser')
 # print(soup)
 # data=soup.findAll('div',{'class':'bd'})

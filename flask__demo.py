@@ -151,26 +151,97 @@
 # if  not os.path.exists("dishui/aa"):
 #     os.mkdir('dishui/aa')
 import requests
-
+#国税、地税申报信息
 headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"}
-postdata={"BatchID":5590,
-"BatchYear":2018,
+postdata={"BatchID":10298,
+"BatchYear":2017,
 "BatchMonth":1,
 "CompanyID":18282900,
 "CustomerID":9,
 # "TaxId":440300754285743,
 # "TaxPwd":77766683,
-"TaxId":'9144030008389925X7',
-"TaxPwd":"y20170410",
+"TaxId":'91440300MA5DFMBMXU',
+"TaxPwd":"741258",
 'jobname':'工程1',
 'jobparams':"工作中",
 'Type':'TAXDATA'
           }
 # re=requests.post(url="http://120.79.65.131:8000/spider/",data=postdata)
 re=requests.post(url="http://127.0.0.1:8000/spider/",data=postdata)
+# re=requests.post(url="http://120.79.65.131:8000/cancel/",data=postdata)
+# re=requests.post(url="http://127.0.0.1:8000/cancel/",data=postdata)
 print(re.text)
 
+#发票信息汇总
+# headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"}
+# postdata={"BatchID":5590,
+# "BatchYear":2018,
+# "BatchMonth":1,
+# "CompanyID":18282900,
+# "CustomerID":9,
+# # "TaxId":440300754285743,
+# # "TaxPwd":77766683,
+# "TaxId":'9144030008389925X7',
+# "TaxPwd":"y20170410",
+# 'jobname':'工程1',
+# 'jobparams':"工作中",
+# 'Type':'CUSTOMERINVOICE'
+#           }
+# # re=requests.post(url="http://120.79.65.131:8000/spider/",data=postdata)
+# re=requests.post(url="http://127.0.0.1:8000/spider/",data=postdata)
+# print(re.text)
 
+#自动申报
+# headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"}
+# postdata={"BatchID":1285,
+# "BatchYear":2018,
+# "BatchMonth":1,
+# "CompanyID":18282900,
+# "CustomerID":9,
+# # "TaxId":440300754285743,
+# # "TaxPwd":77766683,
+# "TaxId":'9144030008389925X7',
+# "TaxPwd":"y20170410",
+# 'jobname':'工程1',
+# 'jobparams':"工作中",
+# 'Type':'TAXAPPLYNORMAL',
+# 'fw1':"0.00",
+# 'fw2':"0.00",
+# 'hw1':"0.00",
+# 'hw2':"174764.08",
+# 'fwms':"0.00",
+# 'hwms':"0.00",
+# 'fwyj':"0.00",
+# 'hwyj':"5242.92",
+# 'djzs':"0.00",
+# 'dfzs':"0.00",
+# 'dczs':"0.00",
+# 'djms':"0.00",
+# 'dfms':"0.00",
+# 'dcms':"0.00"
+#           }
+# # re=requests.post(url="http://120.79.65.131:8000/spider/",data=postdata)
+# # re=requests.post(url="http://127.0.0.1:8000/cancel/",data=postdata)
+# re=requests.post(url="http://127.0.0.1:8000/spider/",data=postdata)
+# print(re.text)
+#完善公司信息
+# headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"}
+# postdata={"BatchID":5590,
+# "BatchYear":2018,
+# "BatchMonth":1,
+# "CompanyID":18282900,
+# "CustomerID":9,
+# # "TaxId":440300754285743,
+# # "TaxPwd":77766683,
+# "TaxId":'440300342506108',
+# "TaxPwd":"741258",
+# 'jobname':'工程1',
+# 'jobparams':"工作中",
+# 'Type':'CUSTOMERINFO'
+#           }
+# # re=requests.post(url="http://120.79.65.131:8000/spider/",data=postdata)
+# re=requests.post(url="http://127.0.0.1:8000/spider/",data=postdata)
+# print(re.text)
 
 
 # captcha_url = 'http://dzswj.szgs.gov.cn/tipCaptcha?0.9322011782378214'

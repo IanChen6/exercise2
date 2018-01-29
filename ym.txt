@@ -1,0 +1,1 @@
+﻿{"TaxId":"91440300305826305F","TaxPwd":"y20170410","PeriodYear":2018,"PeriodMonth":2,"OperType":"APPLY","TaxType":"财务报表","CompanyID":"18282900","bookid":"952","applyyear":"2014","applymonth":"1","acclaw":"NORMAL"}

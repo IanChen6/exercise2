@@ -1,0 +1,228 @@
+Thu 18 Jan 2018 14:58:23 WARNING dkym.py 225 7812 name 'requests' is not defined
+Thu 18 Jan 2018 14:58:23 WARNING dkym.py 226 7812 登陆失败
+Thu 18 Jan 2018 14:58:42 WARNING dkym.py 226 13808 name 'requests' is not defined
+Thu 18 Jan 2018 15:00:02 WARNING dkym.py 227 13808 登陆失败
+Thu 18 Jan 2018 15:00:41 WARNING dkym.py 228 19852 'ksbs' object has no attribute 'user'
+Thu 18 Jan 2018 16:45:08 INFO dkym.py 265 9456 Message: element not visible
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Thu 18 Jan 2018 16:45:08 INFO dkym.py 265 9456 Message: element not visible
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Thu 18 Jan 2018 17:36:58 INFO dkym.py 291 11428 Message: element not visible
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Thu 18 Jan 2018 17:57:54 INFO dkym.py 366 1164 截取国税增值税申报信息
+Thu 18 Jan 2018 17:57:58 INFO dkym.py 366 1164 截取国税财务报表申报信息
+Thu 18 Jan 2018 18:04:11 INFO dkym.py 381 15780 截取国税增值税申报信息
+Thu 18 Jan 2018 18:04:56 INFO dkym.py 381 15780 截取国税财务报表申报信息
+Thu 18 Jan 2018 18:06:51 INFO dkym.py 381 4976 截取国税增值税申报信息
+Thu 18 Jan 2018 18:07:06 INFO dkym.py 381 4976 截取国税财务报表申报信息
+Thu 18 Jan 2018 18:07:18 INFO dkym.py 381 4976 截取国税所得税申报信息
+Thu 18 Jan 2018 18:09:18 INFO dkym.py 381 12684 截取国税增值税申报信息
+Thu 18 Jan 2018 18:09:20 INFO dkym.py 381 12684 截取国税财务报表申报信息
+Thu 18 Jan 2018 18:09:22 INFO dkym.py 381 12684 截取国税所得税申报信息
+Thu 18 Jan 2018 18:11:18 INFO dkym.py 381 16612 截取国税增值税申报信息
+Thu 18 Jan 2018 18:11:20 INFO dkym.py 381 16612 截取国税财务报表申报信息
+Thu 18 Jan 2018 18:11:21 INFO dkym.py 381 16612 截取国税所得税申报信息
+Thu 18 Jan 2018 18:13:36 WARNING dkym.py 581 16612 'ksbs' object has no attribute 'dishuicxgr'
+Thu 18 Jan 2018 18:13:37 INFO dkym.py 582 16612 地税查询失败
+Thu 18 Jan 2018 18:15:12 INFO dkym.py 381 4272 截取国税增值税申报信息
+Thu 18 Jan 2018 18:15:14 INFO dkym.py 381 4272 截取国税财务报表申报信息
+Thu 18 Jan 2018 18:15:16 INFO dkym.py 381 4272 截取国税所得税申报信息
+Thu 18 Jan 2018 18:16:25 WARNING dkym.py 594 4272 'ksbs' object has no attribute 'batchyear'
+Thu 18 Jan 2018 18:19:23 INFO dkym.py 382 2944 截取国税增值税申报信息
+Thu 18 Jan 2018 18:19:25 INFO dkym.py 382 2944 截取国税财务报表申报信息
+Thu 18 Jan 2018 18:19:27 INFO dkym.py 382 2944 截取国税所得税申报信息
+Thu 18 Jan 2018 19:16:39 INFO dkym.py 382 16424 截取国税增值税申报信息
+Thu 18 Jan 2018 19:16:40 INFO dkym.py 382 16424 截取国税财务报表申报信息
+Thu 18 Jan 2018 19:16:42 INFO dkym.py 382 16424 截取国税所得税申报信息
+Thu 18 Jan 2018 19:16:47 WARNING dkym.py 597 16424 Message: no such window
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Thu 18 Jan 2018 19:16:47 INFO dkym.py 598 16424 地税查询失败
+Thu 18 Jan 2018 19:32:11 WARNING dkym.py 626 12328 Message: no such element: Unable to locate element: {"method":"css selector","selector":"#sssqq .mini-buttonedit-input"}
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Thu 18 Jan 2018 19:37:26 WARNING dkym.py 626 11612 Message: no such element: Unable to locate element: {"method":"css selector","selector":"#sssqq .mini-buttonedit-input"}
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Thu 18 Jan 2018 19:43:06 WARNING dkym.py 635 20188 Message: 
+
+Thu 18 Jan 2018 19:48:51 WARNING dkym.py 658 10980 Message: 
+
+Thu 18 Jan 2018 20:01:44 WARNING dkym.py 660 20336 Message: 
+
+Thu 18 Jan 2018 20:03:12 WARNING dkym.py 660 2788 Message: 
+
+Thu 18 Jan 2018 20:06:36 WARNING dkym.py 660 20036 Message: no such element: Unable to locate element: {"method":"css selector","selector":"#zsxmDm"}
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Thu 18 Jan 2018 20:08:27 WARNING dkym.py 660 12400 Message: no such element: Unable to locate element: {"method":"css selector","selector":"#zsxmDm"}
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Thu 18 Jan 2018 21:09:36 INFO dkym.py 655 19728 'NoneType' object has no attribute 'page_source'
+Thu 18 Jan 2018 21:10:23 INFO dkym.py 655 3552 'NoneType' object has no attribute 'page_source'
+Thu 18 Jan 2018 21:12:10 INFO dkym.py 660 15512 Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Thu 18 Jan 2018 21:13:20 INFO dkym.py 497 12348 Message: no such element: Unable to locate element: {"method":"css selector","selector":"#mini-37 .mini-button-text"}
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Thu 18 Jan 2018 21:13:20 WARNING dkym.py 627 12348 Message: unknown error: Element <span class="mini-button-text  mini-button-icon ico-next pngbg">...</span> is not clickable at point (1417, 292). Other element would receive the click: <div class="mini-modal mini-fixed" style="display: block; z-index: 999;"></div>
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Thu 18 Jan 2018 21:14:59 INFO dkym.py 658 12348 Message: chrome not reachable
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Thu 18 Jan 2018 21:15:38 INFO dkym.py 658 18108 Message: chrome not reachable
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Fri 26 Jan 2018 19:06:23 INFO dkym.py 909 14952 'NoneType' object has no attribute 'page_source'
+Fri 26 Jan 2018 19:08:50 INFO dkym.py 910 8856 'NoneType' object has no attribute 'page_source'
+Fri 26 Jan 2018 19:10:50 INFO dkym.py 910 19128 'NoneType' object has no attribute 'page_source'
+Fri 26 Jan 2018 19:14:47 INFO dkym.py 698 8980 Message: no such element: Unable to locate element: {"method":"css selector","selector":"#mini-37 .mini-button-text"}
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Fri 26 Jan 2018 19:14:47 WARNING dkym.py 880 8980 Message: unknown error: Element <span class="mini-button-text  mini-button-icon ico-next pngbg">...</span> is not clickable at point (1417, 292). Other element would receive the click: <div class="mini-modal mini-fixed" style="display: block; z-index: 999;"></div>
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Fri 26 Jan 2018 19:18:47 INFO dkym.py 581 9580 截取国税增值税申报信息
+Fri 26 Jan 2018 19:24:19 INFO dkym.py 581 19400 截取国税财务报表申报信息
+Fri 26 Jan 2018 19:30:58 INFO dkym.py 581 22004 截取国税财务报表申报信息
+Fri 26 Jan 2018 19:45:42 INFO dkym.py 604 10108 截取国税财务报表申报信息
+Fri 26 Jan 2018 19:50:00 INFO dkym.py 604 15424 截取国税财务报表申报信息
+Sat 27 Jan 2018 11:23:18 INFO dkym.py 467 3244 insert_db() missing 3 required positional arguments: 'db', 'sql', and 'params'
+Sat 27 Jan 2018 11:24:32 INFO dkym.py 467 19080 (229, b"The EXECUTE permission was denied on the object 'prAccount_Book_ReportTaxAsset', database 'ACT18282900', schema 'dbo'.DB-Lib error message 20018, severity 14:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+Sat 27 Jan 2018 11:26:50 INFO dkym.py 467 19316 (229, b"The SELECT permission was denied on the object 'TSysRule', database 'AccountCenter', schema 'dbo'.DB-Lib error message 20018, severity 14:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+Sat 27 Jan 2018 11:43:32 INFO dkym.py 471 15100 Statement not executed or executed statement has no resultset
+Sat 27 Jan 2018 11:49:57 INFO dkym.py 473 10204 'pymssql.Cursor' object has no attribute 'stored_results'
+Sat 27 Jan 2018 12:05:20 INFO dkym.py 473 6080 Statement not executed or executed statement has no resultset
+Sat 27 Jan 2018 12:06:33 INFO dkym.py 473 8760 callproc() takes at most 2 positional arguments (3 given)
+Sat 27 Jan 2018 12:08:37 INFO dkym.py 473 6732 (8144, b'Procedure or function prAccount_Book_ReportTaxAsset has too many arguments specified.DB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\n')
+Sat 27 Jan 2018 12:15:04 INFO dkym.py 474 21176 Statement not executed or executed statement has no resultset
+Sat 27 Jan 2018 15:38:20 INFO dkym.py 935 14972 Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Sat 27 Jan 2018 15:39:47 INFO dkym.py 935 16952 Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Sat 27 Jan 2018 15:49:43 INFO dkym.py 936 5496 Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Sat 27 Jan 2018 15:50:44 INFO dkym.py 937 18636 Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Sat 27 Jan 2018 15:55:22 INFO dkym.py 937 18224 Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Sat 27 Jan 2018 15:56:39 INFO dkym.py 937 22212 Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Sat 27 Jan 2018 16:00:57 INFO dkym.py 940 21332 tuple index out of range
+Sat 27 Jan 2018 16:03:06 INFO dkym.py 940 21576 Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Sat 27 Jan 2018 16:04:28 INFO dkym.py 1335 20812 apply失败
+Sat 27 Jan 2018 16:04:28 WARNING dkym.py 1336 20812 Message: element not visible
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Sat 27 Jan 2018 16:06:48 INFO dkym.py 940 19992 Message: invalid selector: Unable to locate an element with the xpath expression //input[id='001C27' because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//input[id='001C27'' is not a valid XPath expression.
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Sat 27 Jan 2018 16:12:55 INFO dkym.py 940 18956 Message: invalid selector: Unable to locate an element with the xpath expression //input[id=001C27] because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//input[id=001C27]' is not a valid XPath expression.
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Sat 27 Jan 2018 16:16:37 INFO dkym.py 940 22992 'list' object has no attribute 'send_keys'
+Sat 27 Jan 2018 16:23:42 INFO dkym.py 940 22072 Message: no such element: Unable to locate element: {"method":"xpath","selector":"//input[id="001C27"]"}
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Sat 27 Jan 2018 16:25:19 INFO dkym.py 940 13712 Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Sat 27 Jan 2018 16:26:27 INFO dkym.py 940 7820 Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Sat 27 Jan 2018 16:29:23 INFO dkym.py 940 8904 Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Sat 27 Jan 2018 16:33:37 INFO dkym.py 941 23520 Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Sat 27 Jan 2018 16:34:50 INFO dkym.py 941 13456 Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Sat 27 Jan 2018 16:42:39 INFO dkym.py 1336 7316 apply失败
+Sat 27 Jan 2018 16:42:39 WARNING dkym.py 1337 7316 Message: element not visible
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Sat 27 Jan 2018 16:46:44 INFO dkym.py 942 22076 object of type 'decimal.Decimal' has no len()
+Sat 27 Jan 2018 16:51:49 INFO dkym.py 942 24424 Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Sat 27 Jan 2018 16:53:45 INFO dkym.py 942 14648 Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Sat 27 Jan 2018 17:31:15 INFO dkym.py 1539 4776 Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Sat 27 Jan 2018 17:34:51 INFO dkym.py 1539 21660 Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Sat 27 Jan 2018 17:37:37 INFO dkym.py 1541 4820 Message: no such element: Unable to locate element: {"method":"id","selector":"#mini-1$2"}
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Sat 27 Jan 2018 17:43:29 INFO dkym.py 1541 13952 Message: no such element: Unable to locate element: {"method":"id","selector":"#mini-1$2"}
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Sat 27 Jan 2018 17:46:01 INFO dkym.py 1543 13932 Message: no such element: Unable to locate element: {"method":"id","selector":"#mini-1$2"}
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Sat 27 Jan 2018 17:48:40 INFO dkym.py 1545 18524 Message: no such element: Unable to locate element: {"method":"id","selector":"#mini-1$2"}
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Sat 27 Jan 2018 17:59:29 INFO dkym.py 1723 14200 截取国税增值税申报信息
+Mon 29 Jan 2018 10:21:47 INFO dkym.py 1724 10668 截取国税增值税申报信息

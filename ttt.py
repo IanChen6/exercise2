@@ -14,4 +14,7 @@ import hashlib
 import json
 from suds.client import Client
 import suds
-
+a="账号和密码不匹配"
+js=json.dumps(a,ensure_ascii=False)
+if "账号和密码不匹配"in js:
+    print("pp")
