@@ -35,9 +35,27 @@ import sys
 # b=Decimal('3.40')
 # a=str(Decimal('3.40').quantize(Decimal('0.00')))
 # print(a)
-with open('asset.txt', 'r', encoding='utf8') as f:
-    mess = f.read()
-    if mess.startswith(u'\ufeff'):
-        mess = mess.encode('utf8')[3:].decode('utf8')
-    mess = json.loads(mess)
-    f.close()
+# with open('asset.txt', 'r', encoding='utf8') as f:
+#     mess = f.read()
+#     if mess.startswith(u'\ufeff'):
+#         mess = mess.encode('utf8')[3:].decode('utf8')
+#     mess = json.loads(mess)
+#     for i in mess:
+#         data=i.values()
+#         # data=data[0]
+#         print(data)
+#         pass
+#     f.close()
+# a=[1,2,3,4,5,6,7,8,9,10,11]
+# def isplit_by_n(ls, n):
+#     for i in range(0, len(ls), n):
+#         yield ls[i:i+n]
+#
+# def split_by_n(ls, n):
+#     return list(isplit_by_n(ls, n))
+#
+# a=split_by_n([1,2,3,4,5,6,7,8,9,10],2)
+# pass
+a='执行事务合伙人:西安地坤:投资:管理有限公司'
+l=a.split(":")
+print(l)

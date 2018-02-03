@@ -226,3 +226,26 @@ Sat 27 Jan 2018 17:48:40 INFO dkym.py 1545 18524 Message: no such element: Unabl
 
 Sat 27 Jan 2018 17:59:29 INFO dkym.py 1723 14200 截取国税增值税申报信息
 Mon 29 Jan 2018 10:21:47 INFO dkym.py 1724 10668 截取国税增值税申报信息
+Mon 29 Jan 2018 11:08:14 INFO dkym.py 1559 7624 1
+Mon 29 Jan 2018 11:09:17 INFO dkym.py 1559 4224 1
+Mon 29 Jan 2018 11:12:10 INFO dkym.py 1559 1404 1
+Mon 29 Jan 2018 11:13:32 INFO dkym.py 1559 3964 1
+Mon 29 Jan 2018 11:15:29 INFO dkym.py 1559 11308 1
+Mon 29 Jan 2018 14:11:13 INFO dkym.py 1559 16016 'float' object has no attribute 'quantize'
+Mon 29 Jan 2018 14:15:28 INFO dkym.py 1954 15928 apply失败
+Mon 29 Jan 2018 14:15:28 WARNING dkym.py 1955 15928 Message: element not visible
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Mon 29 Jan 2018 14:42:26 INFO dkym.py 1913 9096 apply失败
+Mon 29 Jan 2018 14:42:26 WARNING dkym.py 1914 9096 Message: no such element: Unable to locate element: {"method":"css selector","selector":"#mini-4 span"}
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Tue 30 Jan 2018 10:32:19 INFO dkym.py 617 10800 '长期待摊费用'
+Tue 30 Jan 2018 10:33:52 INFO dkym.py 617 8320 '长期待摊费用'
+Tue 30 Jan 2018 10:38:09 INFO dkym.py 1012 10568 apply失败
+Tue 30 Jan 2018 10:38:09 WARNING dkym.py 1013 10568 Message: no such element: Unable to locate element: {"method":"css selector","selector":"#mini-4 span"}
+  (Session info: chrome=63.0.3239.132)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+

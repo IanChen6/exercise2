@@ -1,0 +1,1 @@
+{"companyname":"微信","batchid":"abc123456789"}

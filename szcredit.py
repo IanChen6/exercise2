@@ -34,17 +34,17 @@ session=requests.session()
 yzm = session.get(url=yzm_url, headers=headers)
 
 # 处理验证码
-with open("yzm.jpg", "wb") as f:
-    f.write(yzm.content)
-    f.close()
-with open('yzm.jpg', 'rb') as f:
-    base64_data = str(base64.b64encode(f.read()))
-    base64_data = "data:image/jpg;base64," + base64_data[2:-1]
-    post_data = {"a": 2, "b": base64_data}
-    post_data = json.dumps({"a": 2, "b": base64_data})
-    res = session.post(url="http://39.108.112.203:8002/mycode.ashx", data=post_data)
+# with open("yzm.jpg", "wb") as f:
+#     f.write(yzm.content)
+#     f.close()
+# with open('yzm.jpg', 'rb') as f:
+base64_data = str(base64.b64encode(yzm.content))
+base64_data = "data:image/jpg;base64," + base64_data[2:-1]
+post_data = {"a": 2, "b": base64_data}
+post_data = json.dumps({"a": 2, "b": base64_data})
+res = session.post(url="http://39.108.112.203:8002/mycode.ashx", data=post_data)
     # print(res.text)
-    f.close()
+    # f.close()
 
 postdata = {'action': 'GetEntList',
             'keyword': '深圳市艺林达纸品有限公司',
