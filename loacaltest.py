@@ -27,6 +27,7 @@ postdata={"BatchID":5590,
 'jobparams':"工作中",
 'Type':'CUSTOMERINFO'
           }
-# re=requests.post(url="http://120.79.65.131:8000/spider/",data=postdata)
-re=requests.post(url="http://127.0.0.1:8000/craw2local//",data=postdata)
+# re=requests.post(url="http://120.79.65.131:8080/crawl2local/",data=postdata)
+re=requests.post(url="http://127.0.0.1:8000/crawl2local/",data=postdata)
+# "http://120.79.65.131:8080/crawl2local/
 print(re.text)

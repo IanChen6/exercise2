@@ -2,38 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b69c882a-06ef-4b78-8f8b-79b7d15ca2e3" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/ciyuntu/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ciyuntu/alice.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ciyuntu/ciyun.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ciyuntu/wordcloud.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gdgs.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gdswj.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gjcredit.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/gjxy.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/guangdong.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/guojiaxinyong.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/jiyan.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/loacaltest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/weixin/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/weixin/gongzhonghao.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/add2.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/add_servise.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/msscikit/__init__.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/msscikit/skdemo.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/91440300MA5DRRFB45/国税增值税01申报结果截图.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/91440300MA5DRRFB45/国税申报表截图0101月.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/91440300MA5DRRFB45/国税申报表截图0201月.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/91440300MA5DRRFB45/国税申报表截图0301月.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/91440300MA5DRRFB45/地税个人所得税已申报查询.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/91440300MA5DRRFB45/地税企业所得税已申报查询.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/91440300MA5DRRFB45/地税城市建设税已申报查询.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/91440300MA5DRRFB45/地税已缴款查询.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/91440300MA5DRRFB45/缴税信息.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/cookies/cookies.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dkym.py" afterPath="$PROJECT_DIR$/dkym.py" />
-      <change beforePath="$PROJECT_DIR$/flask__demo.py" afterPath="$PROJECT_DIR$/flask__demo.py" />
-      <change beforePath="$PROJECT_DIR$/kongzhitai.py" afterPath="$PROJECT_DIR$/kongzhitai.py" />
-      <change beforePath="$PROJECT_DIR$/logs/sssslog.log" afterPath="$PROJECT_DIR$/logs/sssslog.log" />
-      <change beforePath="$PROJECT_DIR$/szcredit.py" afterPath="$PROJECT_DIR$/szcredit.py" />
-      <change beforePath="$PROJECT_DIR$/ym.txt" afterPath="$PROJECT_DIR$/ym.txt" />
-      <change beforePath="$PROJECT_DIR$/zhixingjs.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/ciyuntu/test.png" afterPath="$PROJECT_DIR$/ciyuntu/test.png" />
+      <change beforePath="$PROJECT_DIR$/loacaltest.py" afterPath="$PROJECT_DIR$/loacaltest.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,6 +25,7 @@
     <SUITE FILE_PATH="coverage/excercise_master$dkym__1_.coverage" NAME="dkym (1) Coverage Results" MODIFIED="1516965210048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../执行文件" />
     <SUITE FILE_PATH="coverage/excercise_master$gdgs.coverage" NAME="gdgs Coverage Results" MODIFIED="1517296741786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/excercise_master$riqiceshi.coverage" NAME="riqiceshi Coverage Results" MODIFIED="1516949696414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/excercise_master$add2.coverage" NAME="add2 Coverage Results" MODIFIED="1518084784343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/excercise_master$use_logger.coverage" NAME="use_logger Coverage Results" MODIFIED="1516261543292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/excercise-master/log_ging" />
     <SUITE FILE_PATH="coverage/excercise_master$dkym.coverage" NAME="dkym Coverage Results" MODIFIED="1517279970906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/excercise_master$gdswj.coverage" NAME="gdswj Coverage Results" MODIFIED="1517638342649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -60,7 +36,7 @@
     <SUITE FILE_PATH="coverage/excercise_master$ciyun.coverage" NAME="ciyun Coverage Results" MODIFIED="1517566342379" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/wordcloud" />
     <SUITE FILE_PATH="coverage/excercise_master$class_image.coverage" NAME="class_image Coverage Results" MODIFIED="1513763043227" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/excercise-master" />
     <SUITE FILE_PATH="coverage/excercise_master$gongzhonghao.coverage" NAME="gongzhonghao Coverage Results" MODIFIED="1517557012027" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/weixin" />
-    <SUITE FILE_PATH="coverage/excercise_master$ciyun__1_.coverage" NAME="ciyun (1) Coverage Results" MODIFIED="1517647310188" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ciyuntu" />
+    <SUITE FILE_PATH="coverage/excercise_master$ciyun__1_.coverage" NAME="ciyun (1) Coverage Results" MODIFIED="1517831938631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ciyuntu" />
     <SUITE FILE_PATH="coverage/excercise_master$sqlServer.coverage" NAME="sqlServer Coverage Results" MODIFIED="1513675286267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/excercise-master" />
     <SUITE FILE_PATH="coverage/excercise_master$curl_ceshi.coverage" NAME="curl_ceshi Coverage Results" MODIFIED="1515661365061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/excercise_master$proxy_ceshi.coverage" NAME="proxy_ceshi Coverage Results" MODIFIED="1516431542509" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -70,6 +46,9 @@
     <SUITE FILE_PATH="coverage/excercise_master$cookie_test.coverage" NAME="cookie_test Coverage Results" MODIFIED="1515487167559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/excercise_master$tpyz.coverage" NAME="tpyz Coverage Results" MODIFIED="1516968249795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/excercise_master$get_proxy.coverage" NAME="get_proxy Coverage Results" MODIFIED="1516433998861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/excercise-master" />
+    <SUITE FILE_PATH="coverage/excercise_master$sk_demo.coverage" NAME="sk_demo Coverage Results" MODIFIED="1517901653348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sk_learn" />
+    <SUITE FILE_PATH="coverage/excercise_master$add_servise.coverage" NAME="add_servise Coverage Results" MODIFIED="1518083672069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/excercise_master$skdemo.coverage" NAME="skdemo Coverage Results" MODIFIED="1517912585386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/msscikit" />
     <SUITE FILE_PATH="coverage/excercise_master$demo1.coverage" NAME="demo1 Coverage Results" MODIFIED="1516007902514" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/excercise_master$ttt.coverage" NAME="ttt Coverage Results" MODIFIED="1516105065069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/excercise_master$guoshui.coverage" NAME="guoshui Coverage Results" MODIFIED="1514976001677" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/excercise-master" />
@@ -78,7 +57,7 @@
     <SUITE FILE_PATH="coverage/excercise_master$kongzhitai.coverage" NAME="kongzhitai Coverage Results" MODIFIED="1517457604619" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/excercise_master$pdf_read.coverage" NAME="pdf_read Coverage Results" MODIFIED="1514016382515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/excercise_master$zhixingjs.coverage" NAME="zhixingjs Coverage Results" MODIFIED="1516852397701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/excercise_master$loacaltest.coverage" NAME="loacaltest Coverage Results" MODIFIED="1517644976300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/excercise_master$loacaltest.coverage" NAME="loacaltest Coverage Results" MODIFIED="1517989462090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/excercise_master$guojiaxinyong.coverage" NAME="guojiaxinyong Coverage Results" MODIFIED="1517640133797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FavoritesManager">
@@ -89,8 +68,8 @@
       <file leaf-file-name="gdswj.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gdswj.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="77">
-              <caret line="24" column="54" lean-forward="false" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
+            <state relative-caret-position="404">
+              <caret line="69" column="36" lean-forward="false" selection-start-line="69" selection-start-column="36" selection-end-line="69" selection-end-column="36" />
               <folding>
                 <element signature="e#299#310#0" expanded="true" />
               </folding>
@@ -101,9 +80,45 @@
       <file leaf-file-name="loacaltest.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/loacaltest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="25" column="16" lean-forward="false" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+            <state relative-caret-position="513">
+              <caret line="27" column="21" lean-forward="false" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add_servise.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/add_servise.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="35" column="76" lean-forward="true" selection-start-line="35" selection-start-column="76" selection-end-line="35" selection-end-column="76" />
+              <folding>
+                <element signature="e#314#344#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add2.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/add2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="608">
+              <caret line="32" column="86" lean-forward="true" selection-start-line="32" selection-start-column="86" selection-end-line="32" selection-end-column="86" />
+              <folding>
+                <element signature="e#314#344#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="skdemo.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/msscikit/skdemo.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="24" column="12" lean-forward="true" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+              <folding>
+                <element signature="e#315#343#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -111,8 +126,8 @@
       <file leaf-file-name="flask__demo.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flask__demo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-30">
-              <caret line="215" column="16" lean-forward="false" selection-start-line="215" selection-start-column="16" selection-end-line="216" selection-end-column="16" />
+            <state relative-caret-position="513">
+              <caret line="241" column="59" lean-forward="false" selection-start-line="241" selection-start-column="25" selection-end-line="241" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -122,7 +137,7 @@
         <entry file="file://$PROJECT_DIR$/guangdong.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="83" />
+              <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -131,18 +146,18 @@
       <file leaf-file-name="gongzhonghao.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/weixin/gongzhonghao.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="779">
+            <state relative-caret-position="2375">
               <caret line="125" column="0" lean-forward="false" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ciyun.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ciyun.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ciyuntu/ciyun.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="323">
+              <caret line="17" column="53" lean-forward="false" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
               <folding>
                 <element signature="e#314#377#0" expanded="true" />
               </folding>
@@ -153,31 +168,11 @@
       <file leaf-file-name="guojiaxinyong.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/guojiaxinyong.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1252">
+            <state relative-caret-position="1919">
               <caret line="101" column="18" lean-forward="false" selection-start-line="101" selection-start-column="16" selection-end-line="101" selection-end-column="18" />
               <folding>
                 <element signature="e#314#329#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gjcredit.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gjcredit.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gjxy.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gjxy.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="14" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -241,7 +236,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sqlserver.py" />
         <option value="$PROJECT_DIR$/excercise-master/others.py" />
         <option value="$PROJECT_DIR$/other2.py" />
         <option value="$PROJECT_DIR$/otherscaiji.py" />
@@ -287,8 +281,12 @@
         <option value="$PROJECT_DIR$/wordcloud/ciyun.py" />
         <option value="$PROJECT_DIR$/gdswj.py" />
         <option value="$PROJECT_DIR$/guojiaxinyong.py" />
-        <option value="$PROJECT_DIR$/loacaltest.py" />
         <option value="$PROJECT_DIR$/ciyuntu/ciyun.py" />
+        <option value="$PROJECT_DIR$/loacaltest.py" />
+        <option value="$PROJECT_DIR$/sk_learn/sk_demo.py" />
+        <option value="$PROJECT_DIR$/msscikit/skdemo.py" />
+        <option value="$PROJECT_DIR$/add_servise.py" />
+        <option value="$PROJECT_DIR$/add2.py" />
       </list>
     </option>
   </component>
@@ -298,11 +296,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="564" />
-    <option name="y" value="58" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="871" />
+    <option name="y" value="9" />
     <option name="width" value="1308" />
-    <option name="height" value="1089" />
+    <option name="height" value="1162" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -320,7 +318,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -331,23 +329,18 @@
             <path>
               <item name="excercise-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="excercise-master" type="462c0819:PsiDirectoryNode" />
-              <item name="ciyuntu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="excercise-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="excercise-master" type="462c0819:PsiDirectoryNode" />
-              <item name="excercise-master" type="462c0819:PsiDirectoryNode" />
+              <item name="msscikit" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../localcredit" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../xygs" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
@@ -375,46 +368,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.ciyun (1)">
-    <configuration name="ciyun (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ciyuntu" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="excercise-master" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ciyuntu/ciyun.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="ciyun" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/wordcloud" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="excercise-master" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/wordcloud/ciyun.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="gdswj" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.add2">
+    <configuration name="add2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -427,13 +382,13 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="excercise-master" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gdswj.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/add2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="guojiaxinyong" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="add_servise" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -446,7 +401,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="excercise-master" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/guojiaxinyong.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/add_servise.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -471,20 +426,58 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="sk_demo" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/sk_learn" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="excercise-master" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sk_learn/sk_demo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="skdemo" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/msscikit" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="excercise-master" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/msscikit/skdemo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.gdswj" />
-      <item index="1" class="java.lang.String" itemvalue="Python.guojiaxinyong" />
-      <item index="2" class="java.lang.String" itemvalue="Python.ciyun" />
-      <item index="3" class="java.lang.String" itemvalue="Python.ciyun (1)" />
-      <item index="4" class="java.lang.String" itemvalue="Python.loacaltest" />
+      <item index="0" class="java.lang.String" itemvalue="Python.loacaltest" />
+      <item index="1" class="java.lang.String" itemvalue="Python.sk_demo" />
+      <item index="2" class="java.lang.String" itemvalue="Python.skdemo" />
+      <item index="3" class="java.lang.String" itemvalue="Python.add_servise" />
+      <item index="4" class="java.lang.String" itemvalue="Python.add2" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.ciyun (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Python.loacaltest" />
-        <item index="2" class="java.lang.String" itemvalue="Python.guojiaxinyong" />
-        <item index="3" class="java.lang.String" itemvalue="Python.gdswj" />
-        <item index="4" class="java.lang.String" itemvalue="Python.ciyun" />
+        <item index="0" class="java.lang.String" itemvalue="Python.add2" />
+        <item index="1" class="java.lang.String" itemvalue="Python.add_servise" />
+        <item index="2" class="java.lang.String" itemvalue="Python.loacaltest" />
+        <item index="3" class="java.lang.String" itemvalue="Python.skdemo" />
+        <item index="4" class="java.lang.String" itemvalue="Python.sk_demo" />
       </list>
     </recent_temporary>
   </component>
@@ -514,22 +507,21 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="564" y="58" width="1308" height="1089" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32981783" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2147651" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32981783" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21548118" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18028846" sideWeight="0.47651008" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12153518" sideWeight="0.47651008" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6578526" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18367347" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="22" y="453" width="1876" height="253" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1108742" sideWeight="0.52348995" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20144628" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="22" y="453" width="1876" height="253" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1043,6 +1035,16 @@
           <line>16</line>
           <option name="timeStamp" value="436" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/add_servise.py</url>
+          <line>21</line>
+          <option name="timeStamp" value="438" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/add_servise.py</url>
+          <line>58</line>
+          <option name="timeStamp" value="439" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -1051,44 +1053,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="438" />
+      <option name="time" value="440" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sockerclient.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-          <folding>
-            <element signature="e#314#327#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/djxx.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
-          <folding>
-            <element signature="e#314#325#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/excercise-master/wangyi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="55" column="6" lean-forward="false" selection-start-line="55" selection-start-column="6" selection-end-line="55" selection-end-column="6" />
-          <folding>
-            <element signature="e#47#62#0" expanded="false" />
-            <marker date="1516429843309" expanded="true" signature="512:661" ph="CREATE TABLE... IF" />
-            <marker date="1516429843309" expanded="true" signature="1698:1789" ph="INSERT INTO wangyi2... " />
-            <marker date="1516429843309" expanded="true" signature="1790:1832" ph="UPDATE url... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/calendar.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
@@ -1200,13 +1169,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/excercise-master/guoshui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="64" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/captcha.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1284,7 +1246,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
           <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1292,7 +1253,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8626">
           <caret line="457" column="0" lean-forward="false" selection-start-line="457" selection-start-column="0" selection-end-line="457" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1316,14 +1276,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1596">
           <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1331,7 +1283,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1339,7 +1290,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="63" column="2" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1347,14 +1297,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
           <caret line="24" column="23" lean-forward="false" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/guangdong.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="83" />
           <folding />
         </state>
       </provider>
@@ -1377,7 +1319,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/weixin/gongzhonghao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
+        <state relative-caret-position="2375">
           <caret line="125" column="0" lean-forward="false" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
           <folding />
         </state>
@@ -1385,37 +1327,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/guojiaxinyong.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1252">
+        <state relative-caret-position="1919">
           <caret line="101" column="18" lean-forward="false" selection-start-line="101" selection-start-column="16" selection-end-line="101" selection-end-column="18" />
           <folding>
             <element signature="e#314#329#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flask__demo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-30">
-          <caret line="215" column="16" lean-forward="false" selection-start-line="215" selection-start-column="16" selection-end-line="216" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gdswj.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="24" column="54" lean-forward="false" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
-          <folding>
-            <element signature="e#299#310#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loacaltest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="25" column="16" lean-forward="false" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1437,12 +1353,92 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/excercise-master/guoshui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3891">
+          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="64" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ciyuntu/ciyun.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="323">
+          <caret line="17" column="53" lean-forward="false" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
           <folding>
             <element signature="e#314#377#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flask__demo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="241" column="59" lean-forward="false" selection-start-line="241" selection-start-column="25" selection-end-line="241" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/guangdong.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loacaltest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="27" column="21" lean-forward="false" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gdswj.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="69" column="36" lean-forward="false" selection-start-line="69" selection-start-column="36" selection-end-line="69" selection-end-column="36" />
+          <folding>
+            <element signature="e#299#310#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/msscikit/skdemo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="24" column="12" lean-forward="true" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+          <folding>
+            <element signature="e#315#343#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="310" column="0" lean-forward="false" selection-start-line="310" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/add_servise.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="35" column="76" lean-forward="true" selection-start-line="35" selection-start-column="76" selection-end-line="35" selection-end-column="76" />
+          <folding>
+            <element signature="e#314#344#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/add2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="32" column="86" lean-forward="true" selection-start-line="32" selection-start-column="86" selection-end-line="32" selection-end-column="86" />
+          <folding>
+            <element signature="e#314#344#0" expanded="true" />
           </folding>
         </state>
       </provider>
