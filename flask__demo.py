@@ -151,7 +151,7 @@
 # if  not os.path.exists("dishui/aa"):
 #     os.mkdir('dishui/aa')
 import requests
-#国税、地税申报信息
+# #国税、地税申报信息
 # headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"}
 # postdata={"BatchID":10298,
 # "BatchYear":2017,
@@ -164,10 +164,11 @@ import requests
 # "TaxPwd":"741258",
 # 'jobname':'工程1',
 # 'jobparams':"工作中",
-# 'Type':'TAXDATA'
+# 'Type':'TAXDATA',
+#       'JobExtend':'aaa'
 #           }
-# # re=requests.post(url="http://120.79.65.131:8000/spider/",data=postdata)
-# re=requests.post(url="http://127.0.0.1:8000/spider/",data=postdata)
+# re=requests.post(url="http://120.79.65.131:8000/spider/",data=postdata)
+# # re=requests.post(url="http://127.0.0.1:8000/spider/",data=postdata)
 # # re=requests.post(url="http://120.79.65.131:8000/cancel/",data=postdata)
 # # re=requests.post(url="http://127.0.0.1:8000/cancel/",data=postdata)
 # print(re.text)
@@ -225,6 +226,28 @@ import requests
 # re=requests.post(url="http://127.0.0.1:8000/spider/",data=postdata)
 # print(re.text)
 #完善公司信息
+headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"}
+postdata={
+    # "BatchID":'0116f9940108d588fca3040839',
+# "BatchYear":2018,
+# "BatchMonth":1,
+# "CompanyID":18282900,
+# "CustomerID":9,
+# # "TaxId":440300754285743,
+# # "TaxPwd":77766683,
+# "CustomerName":'深圳市九十九维信息咨询有限公司',
+# "TaxId":'440300683771524',
+# "TaxPwd":"xdh123456",
+# 'jobname':'工程1',
+# 'jobparams':"工作中",
+'Type':'CUSTOMERINFO',
+'bathcancel':[["0116f9940108d588fca2df60a6","0116f9940108d588fca2f25938","0116f9940108d588fca3040839","0116f9940108d588fca312db59","0116f9940108d588fca31f8e73","0116f9940108d588fca32c418a","0116f9940108d588fca339f049","0116f9940108d588fca34819ec","0116f9940108d588fca3548cbf","0116f9940108d588fca35fb7f5","0116f9940108d588fca36cac59","0116f9940108d588fca378b529","0116f9940108d588fca3867ab8","0116f9940108d588fca394aa00","0116f9940108d588fca3a3d0ef","0116f9940108d588fca3b1d223","0116f9940108d588fca3be5ded","0116f9940108d588fca3cb9ab5","0116f9940108d588fca3d939f4","0116f9940108d588fca3e7c2db","0116f9940108d588fca3f70fe4","0116f9940108d588fca40480fe","0116f9940108d588fca411aa87","0116f9940108d588fca41dfd74","0116f9940108d588fca42bb57a","0116f9940108d588fca438699f","0116f9940108d588fca449370c","0116f9940108d588fca45638ce","0116f9940108d588fca46275fc","0116f9940108d588fca46f9f30","0116f9940108d588fca4804bef"]]
+          }
+# re=requests.post(url="http://120.79.65.131:8000/spider/",data=postdata)
+# re=requests.post(url="http://127.0.0.1:8000/spider/",data=postdata)
+re=requests.post(url="http://127.0.0.1:8000/cancel/",data=postdata)
+print(re.text)
+#代开发票
 # headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"}
 # postdata={"BatchID":5590,
 # "BatchYear":2018,
@@ -233,33 +256,15 @@ import requests
 # "CustomerID":9,
 # # "TaxId":440300754285743,
 # # "TaxPwd":77766683,
-# "TaxId":'91440300MA5DJ3NT34',
-# "TaxPwd":"10047063",
+# "TaxId":'9144030008389925X7',
+# "TaxPwd":"y20170410",
 # 'jobname':'工程1',
 # 'jobparams':"工作中",
-# 'Type':'CUSTOMERINFO'
+# 'Type':'TAXINVOICE'
 #           }
 # # re=requests.post(url="http://120.79.65.131:8000/spider/",data=postdata)
 # re=requests.post(url="http://127.0.0.1:8000/spider/",data=postdata)
 # print(re.text)
-#代开发票
-headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"}
-postdata={"BatchID":5590,
-"BatchYear":2018,
-"BatchMonth":1,
-"CompanyID":18282900,
-"CustomerID":9,
-# "TaxId":440300754285743,
-# "TaxPwd":77766683,
-"TaxId":'9144030008389925X7',
-"TaxPwd":"y20170410",
-'jobname':'工程1',
-'jobparams':"工作中",
-'Type':'TAXINVOICE'
-          }
-# re=requests.post(url="http://120.79.65.131:8000/spider/",data=postdata)
-re=requests.post(url="http://127.0.0.1:8000/spider/",data=postdata)
-print(re.text)
 
 
 # captcha_url = 'http://dzswj.szgs.gov.cn/tipCaptcha?0.9322011782378214'

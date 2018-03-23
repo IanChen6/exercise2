@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 -------------------------------------------------
-   File Name：
+   File Name：广东省税务局登记信息抓取
    Description :
    Author :       ianchen
    date：
@@ -18,9 +18,12 @@ from lxml import etree
 import time
 from selenium import webdriver
 from selenium.common.exceptions import UnexpectedAlertPresentException
+from selenium.webdriver import DesiredCapabilities
 from selenium.webdriver.support import ui
 import pymssql
 from selenium.webdriver.common.action_chains import ActionChains
+import sys
+import platform
 
 with open('guangdong.txt', 'r', encoding='utf8') as f:
     mess = f.read()
@@ -54,13 +57,15 @@ def isplit_by_n(ls, n):
 def split_by_n(ls, n):
     return list(isplit_by_n(ls, n))
 
-
 options = webdriver.ChromeOptions()
 options.add_argument('disable-infobars')
 options.add_argument("--start-maximized")
-
 try:
-    browser = webdriver.Chrome(executable_path='chromedriver.exe', chrome_options=options)
+    sysname = platform.platform()
+    if "XP" in sysname or "xp" in sysname:
+        browser = webdriver.Chrome(executable_path='chromedriver_xp.exe', chrome_options=options)  # 添加driver的路径
+    else:
+        browser = webdriver.Chrome(executable_path='chromedriver.exe', chrome_options=options)  # 添加driver的路径
     browser.get(
         url='http://gs.etax-gd.gov.cn/sso/login?service=http://gs.etax-gd.gov.cn/xxmh/html/index.html?bszmFrom=1&t=1479433265984')
     wait = ui.WebDriverWait(browser, 8)
@@ -80,9 +85,10 @@ try:
     #         time.sleep(0.1)  # 等待停顿时间
     # except:
     #     pass
-except:
+except Exception as e:
     try:
         print("浏览器启动异常")
+        print(e)
         sys.exit()
     except Exception as e:
         print()
@@ -109,17 +115,55 @@ while True:
             sys.exit()
     if '欢迎您' in page:
         try:
-            try:
-                browser.find_element_by_xpath('//li[@id="liM1_sscx"]/a').click()
-            except:
-                print("系统正常")
-            # 国税
-            browser.switch_to_frame('ifrMain')
-            time.sleep(0.5)
+            b_ck = browser.get_cookies()
+            browser.quit()
+            dcap = dict(DesiredCapabilities.PHANTOMJS)
+            dcap["phantomjs.page.settings.userAgent"] = (
+                'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36')
+            dcap["phantomjs.page.settings.loadImages"] = True
+            browser = webdriver.PhantomJS(
+                executable_path='phantomjs.exe',
+                desired_capabilities=dcap)
+            browser.implicitly_wait(10)
+            browser.get(url='http://gs.etax-gd.gov.cn/xxmh/html/index.html')
+            browser.delete_all_cookies()
+            browser.add_cookie(
+                {'domain': '.gs.etax-gd.gov.cn', 'name': b_ck[0]['name'], 'value': b_ck[0]['value'], 'path': '/',
+                 'expires': None})
+            browser.add_cookie(
+                {'domain':  '.gs.etax-gd.gov.cn', 'name': b_ck[1]['name'], 'value': b_ck[1]['value'], 'path': '/',
+                 'expires': None})
+            browser.add_cookie(
+                {'domain':  '.gs.etax-gd.gov.cn', 'name': b_ck[2]['name'], 'value': b_ck[2]['value'], 'path': '/',
+                 'expires': None})
+            browser.add_cookie(
+                {'domain':  '.gs.etax-gd.gov.cn', 'name': b_ck[3]['name'], 'value': b_ck[3]['value'], 'path': '/',
+                 'expires': None})
+            browser.add_cookie(
+                {'domain':  '.gs.etax-gd.gov.cn', 'name': b_ck[4]['name'], 'value': b_ck[4]['value'], 'path': '/',
+                 'expires': None})
+            browser.add_cookie(
+                {'domain':  '.gs.etax-gd.gov.cn', 'name': b_ck[5]['name'], 'value': b_ck[5]['value'], 'path': '/',
+                 'expires': None})
+            browser.get('http://gs.etax-gd.gov.cn/web-tycx/tycx/4thLvlFunTabsInit.do?cdId=511&gnDm=sscx.yhscx.swdjcx#none')
+            page = browser.page_source
+            #国税
             browser.switch_to_frame('cxtable')
             time.sleep(1)
             browser.switch_to_frame('nsrxxIframe')
             page1 = browser.page_source
+            if "纳税人识别号" not in page1:
+                for jz in range(10):
+                    if "纳税人识别号" not in page1:
+                        browser.get(
+                            'http://gs.etax-gd.gov.cn/web-tycx/tycx/4thLvlFunTabsInit.do?cdId=511&gnDm=sscx.yhscx.swdjcx#none')
+                        page = browser.page_source
+                        browser.switch_to_frame('cxtable')
+                        time.sleep(1)
+                        browser.switch_to_frame('nsrxxIframe')
+                        page1 = browser.page_source
+                    else:
+                        print("查询成功")
             root = etree.HTML(page1)
             judge = root.xpath('//*[@id="dwnsrjbxx"]//table')
             # 表格标题
@@ -256,7 +300,6 @@ while True:
 
             # 地税
             browser.switch_to_default_content()
-            browser.switch_to_frame('ifrMain')
             time.sleep(0.1)
             browser.switch_to_frame('cxtable')
             time.sleep(0.1)
@@ -264,6 +307,19 @@ while True:
             time.sleep(5)
             browser.switch_to_frame('nsrxxIframe')
             page1 = browser.page_source
+            if "纳税人识别号" not in page1:
+                for cs in range(10):
+                    if "纳税人识别号" not in page1:
+                        browser.switch_to_default_content()
+                        time.sleep(0.1)
+                        browser.switch_to_frame('cxtable')
+                        time.sleep(0.1)
+                        browser.find_element_by_link_text('地税').click()
+                        time.sleep(5)
+                        browser.switch_to_frame('nsrxxIframe')
+                        page1 = browser.page_source
+                    else:
+                        print("查询成功")
             root = etree.HTML(page1)
             judge = root.xpath('//*[@id="dwnsrjbxx"]//table')
             # 表格标题
@@ -395,6 +451,8 @@ while True:
             info['地税']=data_dict
             insert_db('[dbo].[Python_Serivce_GSTaxGuangDong_Add]',
                       ((batchid, companyname, zh, pwd, json.dumps(info, ensure_ascii=False))))
+            browser.get("http://gs.etax-gd.gov.cn/web-tycx/tycx/4thLvlFunTabsInit.do?cdId=513&gnDm=sscx.yhscx.sbzscx#none")
+            print("数据插入成功")
             browser.quit()
             break
 

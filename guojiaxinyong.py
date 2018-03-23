@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 -------------------------------------------------
-   File Name：     
+   File Name：   国家信用网
    Description :
    Author :       ianchen
    date：          
@@ -20,6 +20,7 @@ from lxml import etree
 import time
 from selenium import webdriver
 from selenium.common.exceptions import UnexpectedAlertPresentException
+from selenium.webdriver import DesiredCapabilities
 from selenium.webdriver.support import ui
 import pymssql
 from selenium.webdriver.common.action_chains import ActionChains
@@ -92,7 +93,7 @@ while True:
         except Exception as e:
             print(e)
             sys.exit()
-    if '查询到' or '查询结果' in page:
+    if '查询到' in page or '查询结果' in page:
         # 工商信用网基本信息的提取
         try:
             result=browser.page_source
@@ -119,8 +120,27 @@ while True:
                 # "Referer": "http://www.gsxt.gov.cn/corp-query-search-1.html"
             }
             detailurl='http://www.gsxt.gov.cn'+xqurl
+            # browser.quit()
+            # dcap = dict(DesiredCapabilities.PHANTOMJS)
+            # dcap["phantomjs.page.settings.userAgent"] = (
+            #     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36')
+            # dcap["phantomjs.page.settings.loadImages"] = True
+            # browser = webdriver.PhantomJS(
+            #     executable_path='D:/BaiduNetdiskDownload/phantomjs-2.1.1-windows/bin/phantomjs.exe',
+            #     desired_capabilities=dcap)
+            # browser.implicitly_wait(10)
             browser.get(detailurl)
             html=browser.page_source
+            if companyname not in html:
+                for cs in range(10):
+                    if companyname not in html:
+                        browser.get(detailurl)
+                        html = browser.page_source
+                    else:
+                        break
+            if companyname not in html:
+                print("无该公司信息")
+                browser.quit()
             # jq = PyQuery(html)
             # print(jq('title'))  # 获取title标签的源码
             # dl = jq(".overview dl")  # 处理多个元素

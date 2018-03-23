@@ -249,3 +249,51 @@ Tue 30 Jan 2018 10:38:09 WARNING dkym.py 1013 10568 Message: no such element: Un
   (Session info: chrome=63.0.3239.132)
   (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
 
+Fri 09 Mar 2018 15:18:28 INFO dkym.py 1015 23056 apply ß∞‹
+Fri 09 Mar 2018 15:18:28 WARNING dkym.py 1016 23056 Message: unknown error: Element <a href="javascript:void(0)" class="sbxx-more"></a> is not clickable at point (978, 671). Other element would receive the click: <div class="mini-modal mini-fixed" style="display: block; z-index: 1004;"></div>
+  (Session info: chrome=64.0.3282.186)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Fri 09 Mar 2018 15:35:23 INFO dkym.py 705 17416 Message: no such element: Unable to locate element: {"method":"css selector","selector":"#layui-layer1 div.layui-layer-btn a"}
+  (Session info: chrome=64.0.3282.186)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Fri 09 Mar 2018 15:36:27 INFO dkym.py 705 7244 Message: 
+
+Fri 09 Mar 2018 15:37:48 INFO dkym.py 705 12376 Message: no such element: Unable to locate element: {"method":"css selector","selector":"#layui-layer1 div.layui-layer-btn a"}
+  (Session info: chrome=64.0.3282.186)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Fri 09 Mar 2018 15:42:12 INFO dkym.py 709 15548 Message: no such element: Unable to locate element: {"method":"css selector","selector":"#layui-layer1 div.layui-layer-btn a"}
+  (Session info: chrome=64.0.3282.186)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Fri 09 Mar 2018 15:48:25 INFO dkym.py 1024 22744 apply ß∞‹
+Fri 09 Mar 2018 15:48:25 WARNING dkym.py 1025 22744 Message: unknown error: Element <a href="javascript:void(0)" class="sbxx-more"></a> is not clickable at point (978, 613). Other element would receive the click: <div class="mini-modal mini-fixed" style="display: block; z-index: 1004;"></div>
+  (Session info: chrome=64.0.3282.186)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Fri 09 Mar 2018 15:53:38 INFO dkym.py 714 11496 Message: no such element: Unable to locate element: {"method":"css selector","selector":"#layui-layer1 div.layui-layer-btn a"}
+  (Session info: chrome=64.0.3282.186)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Fri 09 Mar 2018 15:54:27 INFO dkym.py 714 16928 Message: no such element: Unable to locate element: {"method":"css selector","selector":"#layui-layer1 div.layui-layer-btn a"}
+  (Session info: chrome=64.0.3282.186)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Fri 09 Mar 2018 15:57:14 INFO dkym.py 717 13304 Message: no such element: Unable to locate element: {"method":"css selector","selector":"#layui-layer1 div.layui-layer-btn a"}
+  (Session info: chrome=64.0.3282.186)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Fri 09 Mar 2018 16:03:50 INFO dkym.py 720 16180 Message: unknown error: Element <iframe id="qyIndex" name="qyIndex" marginwidth="0" marginheight="0" scrolling="no" src="/dzswj/qyMain.do?method=showMain&amp;menufw=100000&amp;menuId=100103&amp;isAutoClick=Y&amp;Pzxh=1&amp;gnmk='sfjn'&amp;sbid=1520582628058" frameborder="0" style="width:100%;" onload="reinitIframeEND('qyIndex');" height="963" cd_frame_id_="292be4891b43d477fe67ccde06ad4a8f">...</iframe> is not clickable at point (471, 207). Other element would receive the click: <div class="layui-layer-shade" id="layui-layer-shade3" times="3" style="z-index:19891016; background-color:#000; opacity:0.3; filter:alpha(opacity=30);"></div>
+  (Session info: chrome=64.0.3282.186)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Fri 09 Mar 2018 16:15:31 INFO dkym.py 721 19460 Message: no such element: Unable to locate element: {"method":"css selector","selector":"#confirmSbBtn"}
+  (Session info: chrome=64.0.3282.186)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+
+Fri 16 Mar 2018 14:36:45 WARNING dkym.py 1152 5248 Message: unknown error: call function result missing 'value'
+  (Session info: chrome=65.0.3325.162)
+  (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
+

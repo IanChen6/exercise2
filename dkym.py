@@ -335,7 +335,14 @@ class ksbs(object):
                         browser.switch_to_window(windows[-1])
                         break
                 time.sleep(1)
-                browser.find_element_by_css_selector('#layui-layer1 div.layui-layer-btn a').click()
+                try:
+                    browser.find_element_by_css_selector('#layui-layer1 div.layui-layer-btn a').click()
+                except:
+                    pass
+                try:
+                    browser.find_element_by_xpath('//*[@id="layui-layer4"]/div[3]/a').click()
+                except:
+                    pass
                 browser.switch_to_frame('qyIndex')
                 wait.until(lambda browser: browser.find_element_by_css_selector("#menu3_3_102001"))
                 browser.find_element_by_css_selector('#menu3_3_102001').click()
@@ -680,10 +687,23 @@ class ksbs(object):
                         browser.switch_to_window(windows[-1])
                         break
                 time.sleep(1)
-                browser.find_element_by_css_selector('#layui-layer1 div.layui-layer-btn a').click()
+                try:
+                    browser.find_element_by_xpath('//*[@id="layui-layer4"]/div[3]/a').click()
+                except:
+                    pass
+                try:
+                    browser.find_element_by_css_selector('#layui-layer1 div.layui-layer-btn a').click()
+                except:
+                    pass
                 browser.switch_to_frame('qyIndex')
                 wait.until(lambda browser: browser.find_element_by_css_selector("#menu3_3_102001"))
-                browser.find_element_by_css_selector('#menu3_3_102001').click()
+                for a in range(2):
+                    browser.find_element_by_css_selector('#menu3_3_102001').click()
+                    try:
+                        browser.find_element_by_xpath('//*[@id="layui-layer3"]/div[3]/a').click()
+                        browser.find_element_by_css_selector('#menu3_3_102001').click()
+                    except:
+                        break
                 browser.switch_to_frame('qymain')
                 time.sleep(2)
                 dspage = browser.page_source
@@ -730,7 +750,14 @@ class ksbs(object):
                         browser.switch_to_window(windows[-1])
                         break
                 time.sleep(1)
-                browser.find_element_by_css_selector('#layui-layer1 div.layui-layer-btn a').click()
+                try:
+                    browser.find_element_by_css_selector('#layui-layer1 div.layui-layer-btn a').click()
+                except:
+                    pass
+                try:
+                    browser.find_element_by_xpath('//*[@id="layui-layer4"]/div[3]/a').click()
+                except:
+                    pass
                 browser.switch_to_frame('qyIndex')
                 wait.until(lambda browser: browser.find_element_by_css_selector("#menu3_3_102001"))
                 browser.find_element_by_css_selector('#menu3_3_102001').click()
@@ -843,6 +870,10 @@ class ksbs(object):
                 browser.switch_to_window(windows[-1])
                 break
         cont = browser.page_source
+        try:
+            browser.find_element_by_xpath('//*[@id="layui-layer4"]/div[3]/a').click()
+        except:
+            pass
         if "地方税务局" in cont:
             # 个人
             newwindow = 'window.open("https://dzswj.szds.gov.cn/dzswj/sbxxcx.do?method=toSbxxCx&qyyhDzswjRandomNum=0.9806496945471579")'
@@ -943,6 +974,10 @@ class ksbs(object):
                 browser.switch_to_window(windows[-1])
                 break
         cont = browser.page_source
+        try:
+            browser.find_element_by_xpath('//*[@id="layui-layer4"]/div[3]/a').click()
+        except:
+            pass
         if "地方税务局" in cont:
             newwindow = 'window.open("https://dzswj.szds.gov.cn/dzswj/yjkxxcx.do?method=init&qyyhDzswjRandomNum=0.26304088553508564")'
             browser.execute_script(newwindow)
@@ -1005,6 +1040,13 @@ class ksbs(object):
                 'path': '/',
                 'expires': None})
         browser.get(url="http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/myoffice/myoffice.html")
+        try:
+            browser.find_element_by_xpath('//*[@id="mini-33"]/span').click()
+            browser.find_element_by_xpath('//*[@id="mini-31"]/span').click()
+            browser.find_element_by_xpath('//*[@id="mini-6"]/span').click()
+            browser.find_element_by_xpath('//*[@id="mini-4"]').click()
+        except:
+            pass
         time.sleep(3)
         page = browser.page_source
         if self.opertype == 'APPLY':

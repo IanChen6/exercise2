@@ -1,1 +1,1 @@
-﻿{"TaxId":"9144030008389925X7","TaxPwd":"y20170410","PeriodYear":2018,"PeriodMonth":2,"OperType":"APPLY","TaxType":"财务报表","CompanyID":"18282900","bookid":"952","applyyear":"2014","applymonth":"1","acclaw":"SMALL"}
+﻿{"PeriodYear":2018,"PeriodMonth":3,"TaxId":"440300570032864","TaxPwd":"84139988","OperType":"PAYSEARCH","TaxType":"地税三项"}

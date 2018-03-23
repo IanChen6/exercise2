@@ -43,4 +43,34 @@ def get_all_proxie():
 if __name__ == "__main__":
     proxy_list=get_all_proxie()
     proxy=proxy_list[random.randint(0,len(proxy_list)-1)]
-    print(proxy)
+    # print(proxy)
+    sess=requests.session()
+
+    sess.proxies={'http': 'http://bjhz:bjhz@139.199.12.61:7777', 'https': 'http://bjhz:bjhz@139.199.12.61:7777'}
+    headers = {'Accept': 'application/json, text/javascript, */*; q=0.01',
+                    'Accept-Language': 'zh-CN,zh;q=0.9',
+                    'Accept-Encoding': 'gzip, deflate, br',
+                    'Connection': 'keep-alive',
+                    'Host': 'www.szcredit.org.cn',
+                    'Cookie': 'UM_distinctid=160a1f738438cb-047baf52e99fc4-e323462-232800-160a1f73844679; ASP.NET_SessionId=4bxqhcptbvetxqintxwgshll',
+                    'Origin': 'https://www.szcredit.org.cn',
+                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                    'Referer': 'https://www.szcredit.org.cn/web/gspt/newGSPTList.aspx?keyword=%u534E%u88D4&codeR=28',
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+                    'X-Requested-With': 'XMLHttpRequest',
+                    }
+    i=1
+    while True:
+        sleep_time = [3, 4, 3.5, 4.5, 3.2, 3.8, 3.1, 3.7, 3.3, 3.6]
+        time.sleep(sleep_time[random.randint(0, 9)])
+        d = sess.get('https://www.szcredit.org.cn/web/gspt/newGSPTDetail3.aspx?ID=579A40E60C0B433ABCA964E2124DCE89',
+                     headers=headers)
+        d.encoding = 'gbk'
+        if "财税无忧" in d.text:
+            print("pass")
+        else:
+            print("failed")
+        print(i)
+        while True:
+            print(random.randint(0,3))
+        i += 1
