@@ -14,15 +14,15 @@
 import requests
 
 headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"}
-postdata={"BatchID":5590,
+postdata={"BatchID":"111",
 "BatchYear":2018,
 "BatchMonth":1,
-"CompanyID":18282900,
-"CustomerID":9,
+"CompanyID":0,
+"CustomerID":0,
 # "TaxId":"440300692516197",#深圳市隆创盛科技有限公司()
 # "TaxPwd":"27930462",
-"TaxId":'91440300775551684W',#bote
-"TaxPwd":"79066664",
+"TaxId":'91440300MA5EQUCD5J',#bote
+"TaxPwd":"10716674",
 # "TaxId":'440300582721683',#和乐手袋
 # "TaxPwd":"84322586",
 # "TaxId":'440300782766261',#深圳市清驰科技有限公司()
@@ -46,7 +46,8 @@ postdata={"BatchID":5590,
 'jobname':'工程1',
 'jobparams':"工作中",
 'Type':'CUSTOMERINFO',
-# "CustomerName":'深圳市欧迪光电科技有限公司'
+# 'Request':'登录账号：13590240680 密码：abcd1234',
+# "CustomerName":'深圳市芃博科技有限公司'
           }
 # re=requests.post(url="http://120.79.65.131:8080/crawl2local/",data=postdata)
 re=requests.post(url="http://127.0.0.1:8000/crawl2local/",data=postdata)

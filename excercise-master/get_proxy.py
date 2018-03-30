@@ -46,7 +46,8 @@ if __name__ == "__main__":
     # print(proxy)
     sess=requests.session()
 
-    sess.proxies={'http': 'http://bjhz:bjhz@139.199.12.61:7777', 'https': 'http://bjhz:bjhz@139.199.12.61:7777'}
+    sess.proxies=                                              {'http': 'http://bjhz:bjhz@123.207.24.103:7777',
+                                               'https': 'http://bjhz:bjhz@123.207.24.103:7777'}
     headers = {'Accept': 'application/json, text/javascript, */*; q=0.01',
                     'Accept-Language': 'zh-CN,zh;q=0.9',
                     'Accept-Encoding': 'gzip, deflate, br',
@@ -60,17 +61,13 @@ if __name__ == "__main__":
                     'X-Requested-With': 'XMLHttpRequest',
                     }
     i=1
-    while True:
-        sleep_time = [3, 4, 3.5, 4.5, 3.2, 3.8, 3.1, 3.7, 3.3, 3.6]
-        time.sleep(sleep_time[random.randint(0, 9)])
-        d = sess.get('https://www.szcredit.org.cn/web/gspt/newGSPTDetail3.aspx?ID=579A40E60C0B433ABCA964E2124DCE89',
-                     headers=headers)
-        d.encoding = 'gbk'
-        if "财税无忧" in d.text:
-            print("pass")
-        else:
-            print("failed")
-        print(i)
-        while True:
-            print(random.randint(0,3))
-        i += 1
+    sleep_time = [3, 4, 3.5, 4.5, 3.2, 3.8, 3.1, 3.7, 3.3, 3.6]
+    time.sleep(sleep_time[random.randint(0, 9)])
+    d = sess.get('https://www.szcredit.org.cn/web/gspt/newGSPTDetail3.aspx?ID=f3023f7fa002450f85e117c12b619908',
+                 headers=headers)
+    d.encoding = 'gbk'
+    if "深圳市芃博科技有限公司" in d.text:
+        print("pass")
+    else:
+        print("failed")
+

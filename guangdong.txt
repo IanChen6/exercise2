@@ -1,1 +1,1 @@
-{"zh":"GZ税友税务师","pwd":"Gz112277","batchid":"abc123456789","companyname":"广东税友财务公司"}
+{"zh":"GZ税友税务师","pwd":"Gz112277","batchid":"abc123456789","companyname":"广东税友财务公司","Are":"1212"}

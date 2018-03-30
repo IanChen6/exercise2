@@ -31,13 +31,19 @@ with open('gjcredit.txt', 'r', encoding='utf8') as f:
         mess = mess.encode('utf8')[3:].decode('utf8')
     mess = json.loads(mess)
     f.close()
-companyid="18282900"
-batchid=mess['batchid']
-companyname= mess['companyname']
+companyid = "0"
+batchid = mess['batchid']
+companyname = mess['companyname']
+jobname = "抓取数据"
+jobparams = {}
+are = mess['Are']
+jobparams["Are"] = are
+jobparams = json.dumps(jobparams, ensure_ascii=False)
+
 
 def insert_db(sql, params):
-    conn = pymssql.connect(host='main01', port='1433', user='python', password='pl,okmPL<OKM',
-                           database='ACTCenter', charset='utf8')
+    conn = pymssql.connect(host='39.108.1.170', port='3433', user='python', password='pl,okmPL<OKM',
+                           database='Platform', charset='utf8')
     cur = conn.cursor()
     if not cur:
         raise Exception("数据库连接失败")
@@ -45,17 +51,42 @@ def insert_db(sql, params):
     cur.callproc(sql, params)
     conn.commit()
     cur.close()
+
+
+def add_task(host, port, db, batchid, batchyear, batchmonth, companyid, customerid, type, jobname, jobparam):
+    conn = pymssql.connect(host=host, port=port, user='python', password='pl,okmPL<OKM', database=db, autocommit=True,
+                           charset='utf8')
+    cur = conn.cursor()
+    sql = '[dbo].[Python_Serivce_Job_AddV1]'
+    params = (batchid, batchyear, batchmonth, companyid, customerid, type, jobname, jobparam)
+    foo = cur.callproc(sql, params)
+    print(foo[-1])
+    conn.close()
+
+
+def job_finish(host, port, db, batchid, companyid, customerid, status, result):
+    conn = pymssql.connect(host=host, port=port, user='Python', password='pl,okmPL<OKM', database=db, autocommit=True,
+                           charset='utf8')
+    cur = conn.cursor()
+    sql = '[dbo].[Python_Serivce_Job_Finish]'
+    params = (batchid, companyid, customerid, status, result)
+    print(params)
+    foo = cur.callproc(sql, params)
+    conn.close()
+
+
 def isplit_by_n(ls, n):
     for i in range(0, len(ls), n):
-        yield ls[i:i+n]
+        yield ls[i:i + n]
+
 
 def split_by_n(ls, n):
     return list(isplit_by_n(ls, n))
 
+
 options = webdriver.ChromeOptions()
 options.add_argument('disable-infobars')
 options.add_argument("--start-maximized")
-
 
 try:
     browser = webdriver.Chrome(executable_path='chromedriver.exe', chrome_options=options)
@@ -96,11 +127,28 @@ while True:
     if '查询到' in page or '查询结果' in page:
         # 工商信用网基本信息的提取
         try:
-            result=browser.page_source
-            rq=PyQuery(result)
-            alist=rq('.search_list_item')
+            add_task('39.108.1.170', '3433', 'Platform', batchid, '0', '0', companyid, '0',
+                     "CUSTOMERINFO", jobname, jobparams)
+            result = browser.page_source
+            time.sleep(2)
+            if companyname not in result:
+                for cs in range(10):
+                    if companyname not in result:
+                        print("刷新页面")
+                        browser.refresh()
+                        browser.switch_to_alert().accept()
+                        time.sleep(2)
+                        html = browser.page_source
+                    else:
+                        break
+            if companyname not in result:
+                print("无该公司信息")
+                browser.quit()
+                break
+            rq = PyQuery(result)
+            alist = rq('.search_list_item')
             for i in alist:
-                xqurl=PyQuery(i).attr('href')
+                xqurl = PyQuery(i).attr('href')
                 break
             # with open('gjxy.html', 'r', encoding='utf') as f:
             #     html = f.read()
@@ -119,28 +167,23 @@ while True:
                 "Cookie": "__jsluid=eb8523c9655107d177806597beb43f57; UM_distinctid=15b0d57141c23d-08caf973d-4349052c-1fa400-15b0d57141d940; tlb_cookie1=114ui_8280; Hm_lvt_d7682ab43891c68a00de46e9ce5b76aa=1492692994; Hm_lpvt_d7682ab43891c68a00de46e9ce5b76aa=1493024386; JSESSIONID=E7E8CC28F2EA0ABAF34E5B0B28A76730-n1:0; tlb_cookie=24query_8080; CNZZDATA1261033118=1201860774-1490573985-%7C1493103540; Hm_lvt_cdb4bc83287f8c1282df45ed61c4eac9=1490577462,1492505367; Hm_lpvt_cdb4bc83287f8c1282df45ed61c4eac9=1493104058",
                 # "Referer": "http://www.gsxt.gov.cn/corp-query-search-1.html"
             }
-            detailurl='http://www.gsxt.gov.cn'+xqurl
-            # browser.quit()
-            # dcap = dict(DesiredCapabilities.PHANTOMJS)
-            # dcap["phantomjs.page.settings.userAgent"] = (
-            #     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36')
-            # dcap["phantomjs.page.settings.loadImages"] = True
-            # browser = webdriver.PhantomJS(
-            #     executable_path='D:/BaiduNetdiskDownload/phantomjs-2.1.1-windows/bin/phantomjs.exe',
-            #     desired_capabilities=dcap)
-            # browser.implicitly_wait(10)
+            detailurl = 'http://www.gsxt.gov.cn' + xqurl
             browser.get(detailurl)
-            html=browser.page_source
+            time.sleep(0.5)
+            html = browser.page_source
             if companyname not in html:
                 for cs in range(10):
                     if companyname not in html:
+                        print("刷新页面")
                         browser.get(detailurl)
+                        time.sleep(2)
                         html = browser.page_source
                     else:
                         break
             if companyname not in html:
                 print("无该公司信息")
                 browser.quit()
+                break
             # jq = PyQuery(html)
             # print(jq('title'))  # 获取title标签的源码
             # dl = jq(".overview dl")  # 处理多个元素
@@ -169,13 +212,16 @@ while True:
                 item_dict[itemlist[0]] = itemlist[1]
                 pass
             print(item_dict)
-            insert_db('[dbo].[Python_Serivce_CreditWebGuoJia_Add]',(batchid,companyname,json.dumps(item_dict,ensure_ascii=False)))
+            insert_db('[dbo].[Python_Serivce_CreditWebGuoJia_Add]',
+                      (batchid, companyname, json.dumps(item_dict, ensure_ascii=False)))
+            job_finish('39.108.1.170', '3433', 'Platform', batchid, companyid, "0", '1',
+                       "成功爬取")
             browser.quit()
             break
 
         except Exception as e:
+            job_finish('39.108.1.170', '3433', 'Platform', batchid, companyid, "0", '-1',
+                       "爬取失败")
+            browser.quit()
             print(e)
             pass
-
-
-

@@ -1,1 +1,1 @@
-{"companyname":"广州税友税务师事务所有限公司","batchid":"abc123456789"}
+{"companyname":"广州税友税务师事务所有限公司","batchid":"abc123456789","Are":"abcd"}
