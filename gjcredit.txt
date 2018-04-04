@@ -1,1 +1,1 @@
-{"companyname":"广州税友税务师事务所有限公司","batchid":"abc123456789","Are":"abcd"}
+{"companyname":"东莞市米爱家具有限公司","batchid":"abc123456789","jobparams":"{\"BatchID\":\"5c7b8f50b3c14acbbc6dff582bd97ab7\",\"BatchYear\":0,\"BatchMonth\":0,\"CompanyID\":0,\"CustomerID\":0,\"Type\":\"CUSTOMERINFO\",\"TaxId\":\"\",\"TaxPwd\":\"132328\",\"jobname\":\"获取税务信息\",\"jobparams\":null,\"Are\":\"东莞\",\"CustomerName\":\"深圳市金鑫成金属材料有限公司\",\"SocialID\":\"\",\"Request\":\"\",\"DbServce\":\"main01\",\"Dbuid\":\"sa\",\"Dbpwd\":\"KingNeed@163.com\"}"}

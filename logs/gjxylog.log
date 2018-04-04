@@ -1,0 +1,53 @@
+Tue 03 Apr 2018 10:14:50 INFO guojiaxinyong.py 160 14832 26392 查询到结果
+Tue 03 Apr 2018 10:14:50 INFO guojiaxinyong.py 163 14832 26392 添加任务
+Tue 03 Apr 2018 10:14:52 INFO guojiaxinyong.py 202 14832 26392 获取详情页地址
+Tue 03 Apr 2018 10:15:13 INFO guojiaxinyong.py 259 14832 26392 {'登记状态': ' 在营（开业）企业', '统一社会信用代码': ' 91440101054503690K', '登记机关': ' 广州市天河区工商行政管理局', '股东及出资信息': {'2': {'序号': '2', '股东名称': '刘瑞明'}, '1': {'序号': '2', '股东名称': '刘瑞明'}}, '成立日期': ' 2012年09月17日', '类型': ' 有限责任公司(自然人投资或控股)', '经营范围': ' 税务师事务所;工商咨询服务;企业财务咨询服务;', '营业期限自': ' 2012年09月17日', '法定代表人': ' 刘瑞明', '住所': ' 广州市天河区五山路141号之二1716房（仅限办公用途）', '企业名称': ' 广州税友税务师事务所有限公司', '营业期限至': '', '核准日期': ' 2018年01月19日', '注册资本': ' 30.000000万人民币'}
+Tue 03 Apr 2018 10:15:13 INFO guojiaxinyong.py 260 14832 26392 信用网成功爬取
+Tue 03 Apr 2018 11:06:38 INFO guojiaxinyong.py 160 3464 10648 查询到结果
+Tue 03 Apr 2018 11:06:38 INFO guojiaxinyong.py 163 3464 10648 添加任务
+Tue 03 Apr 2018 11:06:42 INFO guojiaxinyong.py 202 3464 10648 获取详情页地址
+Tue 03 Apr 2018 11:07:04 INFO guojiaxinyong.py 259 3464 10648 {'法定代表人': ' 郑显锋', '营业期限至': '', '股东及出资信息': {'1': {'股东名称': '胡世文', '序号': '4'}, '4': {'股东名称': '胡世文', '序号': '4'}, '3': {'股东名称': '胡世文', '序号': '4'}, '2': {'股东名称': '胡世文', '序号': '4'}}, '统一社会信用代码': ' 91441900086767543C', '登记机关': ' 广东省东莞市工商行政管理局', '住所': ' 东莞市横沥镇站前路48号一、二层', '核准日期': ' 2015年09月25日', '注册资本': ' 50.000000万人民币', '营业期限自': ' 2013年12月06日', '企业名称': ' 东莞市米爱家具有限公司', '成立日期': ' 2013年12月06日', '类型': ' 有限责任公司(自然人投资或控股)', '登记状态': ' 在营（开业）企业', '经营范围': ' 销售：家具、灯饰、家居饰品。'}
+Tue 03 Apr 2018 11:07:04 INFO guojiaxinyong.py 260 3464 10648 信用网成功爬取
+Tue 03 Apr 2018 11:28:08 INFO guojiaxinyong.py 149 25460 24548 浏览器异常关闭
+Tue 03 Apr 2018 11:29:57 INFO guojiaxinyong.py 135 21240 8220 浏览器异常关闭
+Tue 03 Apr 2018 11:30:41 INFO guojiaxinyong.py 160 10016 24356 查询到结果
+Tue 03 Apr 2018 11:30:41 INFO guojiaxinyong.py 163 10016 24356 添加任务
+Tue 03 Apr 2018 11:30:45 INFO guojiaxinyong.py 202 10016 24356 获取详情页地址
+Tue 03 Apr 2018 11:30:52 INFO guojiaxinyong.py 259 10016 24356 {'住所': '东莞市横沥镇站前路48号一、二层', '登记状态': '在营（开业）企业', '营业期限至': '', '经营范围': '销售：家具、灯饰、家居饰品。', '统一社会信用代码': '91441900086767543C', '登记机关': '广东省东莞市工商行政管理局', '企业名称': '东莞市米爱家具有限公司', '类型': '有限责任公司(自然人投资或控股)', '股东及出资信息': {'2': {'股东名称': '胡世文', '序号': '4'}, '3': {'股东名称': '胡世文', '序号': '4'}, '4': {'股东名称': '胡世文', '序号': '4'}, '1': {'股东名称': '胡世文', '序号': '4'}}, '核准日期': '2015年09月25日', '注册资本': '50.000000万人民币', '成立日期': '2013年12月06日', '法定代表人': '郑显锋', '营业期限自': '2013年12月06日'}
+Tue 03 Apr 2018 11:30:52 INFO guojiaxinyong.py 260 10016 24356 信用网成功爬取
+Tue 03 Apr 2018 18:45:31 INFO guojiaxinyong.py 160 22644 22504 查询到结果
+Tue 03 Apr 2018 18:45:33 INFO guojiaxinyong.py 163 22644 22504 添加任务
+Tue 03 Apr 2018 18:45:44 INFO guojiaxinyong.py 270 22644 22504 爬取失败
+Tue 03 Apr 2018 18:45:45 INFO guojiaxinyong.py 271 22644 22504 'HtmlElement' object is not callable
+Tue 03 Apr 2018 18:47:56 INFO guojiaxinyong.py 160 1716 28052 查询到结果
+Tue 03 Apr 2018 18:47:56 INFO guojiaxinyong.py 163 1716 28052 添加任务
+Tue 03 Apr 2018 18:48:04 INFO guojiaxinyong.py 202 1716 28052 获取详情页地址
+Tue 03 Apr 2018 18:51:25 INFO guojiaxinyong.py 160 27936 22800 查询到结果
+Tue 03 Apr 2018 18:51:25 INFO guojiaxinyong.py 163 27936 22800 添加任务
+Tue 03 Apr 2018 18:51:29 INFO guojiaxinyong.py 202 27936 22800 获取详情页地址
+Tue 03 Apr 2018 18:52:21 INFO guojiaxinyong.py 160 17456 22168 查询到结果
+Tue 03 Apr 2018 18:52:21 INFO guojiaxinyong.py 163 17456 22168 添加任务
+Tue 03 Apr 2018 18:52:25 INFO guojiaxinyong.py 202 17456 22168 获取详情页地址
+Tue 03 Apr 2018 18:52:37 INFO guojiaxinyong.py 269 17456 22168 爬取失败
+Tue 03 Apr 2018 18:52:37 INFO guojiaxinyong.py 270 17456 22168 Message: chrome not reachable
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64)
+
+Tue 03 Apr 2018 18:52:40 INFO guojiaxinyong.py 135 17456 22168 浏览器异常关闭
+Tue 03 Apr 2018 18:54:01 INFO guojiaxinyong.py 160 26344 25020 查询到结果
+Tue 03 Apr 2018 18:54:01 INFO guojiaxinyong.py 163 26344 25020 添加任务
+Tue 03 Apr 2018 18:54:05 INFO guojiaxinyong.py 202 26344 25020 获取详情页地址
+Tue 03 Apr 2018 18:55:51 INFO guojiaxinyong.py 160 21984 6872 查询到结果
+Tue 03 Apr 2018 18:55:51 INFO guojiaxinyong.py 163 21984 6872 添加任务
+Tue 03 Apr 2018 18:55:55 INFO guojiaxinyong.py 202 21984 6872 获取详情页地址
+Tue 03 Apr 2018 18:55:55 INFO guojiaxinyong.py 269 21984 6872 爬取失败
+Tue 03 Apr 2018 18:55:55 INFO guojiaxinyong.py 270 21984 6872 Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Cannot navigate to invalid URL"}
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 10.0.16299 x86_64)
+
+Tue 03 Apr 2018 18:55:58 INFO guojiaxinyong.py 135 21984 6872 浏览器异常关闭
+Tue 03 Apr 2018 18:56:55 INFO guojiaxinyong.py 160 22988 24868 查询到结果
+Tue 03 Apr 2018 18:56:55 INFO guojiaxinyong.py 163 22988 24868 添加任务
+Tue 03 Apr 2018 18:56:59 INFO guojiaxinyong.py 202 22988 24868 获取详情页地址
+Tue 03 Apr 2018 18:57:24 INFO guojiaxinyong.py 259 22988 24868 {'股东及出资信息': {'1': {'股东名称': '胡世文', '序号': '4'}, '3': {'股东名称': '胡世文', '序号': '4'}, '4': {'股东名称': '胡世文', '序号': '4'}, '2': {'股东名称': '胡世文', '序号': '4'}}, '核准日期': '2015年09月25日', '住所': '东莞市横沥镇站前路48号一、二层', '经营范围': '销售：家具、灯饰、家居饰品。', '营业期限至': '', '注册资本': '50.000000万人民币', '营业期限自': '2013年12月06日', '企业名称': '东莞市米爱家具有限公司', '登记机关': '广东省东莞市工商行政管理局', '类型': '有限责任公司(自然人投资或控股)', '登记状态': '在营（开业）企业', '成立日期': '2013年12月06日', '统一社会信用代码': '91441900086767543C', '法定代表人': '郑显锋'}
+Tue 03 Apr 2018 18:57:24 INFO guojiaxinyong.py 260 22988 24868 信用网成功爬取

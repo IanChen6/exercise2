@@ -24,6 +24,8 @@ from selenium.webdriver import DesiredCapabilities
 from selenium.webdriver.support import ui
 import pymssql
 from selenium.webdriver.common.action_chains import ActionChains
+import logging
+import os
 
 with open('gjcredit.txt', 'r', encoding='utf8') as f:
     mess = f.read()
@@ -36,10 +38,28 @@ batchid = mess['batchid']
 companyname = mess['companyname']
 jobname = "抓取数据"
 jobparams = {}
-are = mess['Are']
-jobparams["Are"] = are
-jobparams = json.dumps(jobparams, ensure_ascii=False)
+jobparams = mess['jobparams']
 
+def create_logger(level=logging.DEBUG, path="task"):
+    # create logger
+    logger_name = "example"
+    logger = logging.getLogger(logger_name)
+    logger.setLevel(level)
+    # create file handler
+    log_path = './logs/{}log.log'.format(path)
+    fh = logging.FileHandler(log_path, encoding='utf8')
+    fh.setLevel(level)
+    # CREATE FORMATTER
+    fmt = "%(asctime)s %(levelname)s %(filename)s %(lineno)d %(thread)d %(process)d %(message)s"
+    datefmt = "%a %d %b %Y %H:%M:%S"
+    formatter = logging.Formatter(fmt, datefmt)
+    # add handler and formatter to logger
+    fh.setFormatter(formatter)
+    logger.addHandler(fh)
+    return logger
+
+
+logger = create_logger(path='gjxy')
 
 def insert_db(sql, params):
     conn = pymssql.connect(host='39.108.1.170', port='3433', user='python', password='pl,okmPL<OKM',
@@ -90,7 +110,7 @@ options.add_argument("--start-maximized")
 
 try:
     browser = webdriver.Chrome(executable_path='chromedriver.exe', chrome_options=options)
-    browser.get(url='http://www.gsxt.gov.cn/corp-query-homepage.html')
+    browser.get(url='http://gd.gsxt.gov.cn/index.html')
     wait = ui.WebDriverWait(browser, 8)
     wait.until(lambda browser1: browser1.find_element_by_css_selector("#keyword"))
     browser.find_element_by_xpath("//*[@id='keyword']").send_keys(companyname)  # send_keys：实现往框中输入内容
@@ -100,9 +120,11 @@ try:
 except:
     try:
         print("浏览器启动异常")
+        logger.info("浏览器启动异常")
         sys.exit()
     except Exception as e:
-        print()
+        logger.info(e)
+        print(e)
         sys.exit()
 while True:
     try:
@@ -110,9 +132,13 @@ while True:
     except:
         try:
             print("浏览器异常关闭")
+            logger.info("浏览器异常关闭")
+            job_finish('39.108.1.170', '3433', 'Platform', batchid, companyid, "0", '-1',
+                       "爬取失败")
             sys.exit()
         except Exception as e:
             print(e)
+            logger.info(e)
             sys.exit()
     try:
         if '欢迎您' in page:
@@ -120,24 +146,30 @@ while True:
     except:
         try:
             print("浏览器异常关闭")
+            logger.info("浏览器异常关闭")
+            job_finish('39.108.1.170', '3433', 'Platform', batchid, companyid, "0", '-1',
+                       "爬取失败")
             sys.exit()
         except Exception as e:
             print(e)
+            logger.info(e)
             sys.exit()
     if '查询到' in page or '查询结果' in page:
         # 工商信用网基本信息的提取
         try:
+            logger.info("查询到结果")
             add_task('39.108.1.170', '3433', 'Platform', batchid, '0', '0', companyid, '0',
                      "CUSTOMERINFO", jobname, jobparams)
+            logger.info("添加任务")
+            time.sleep(4)
             result = browser.page_source
-            time.sleep(2)
             if companyname not in result:
                 for cs in range(10):
                     if companyname not in result:
                         print("刷新页面")
                         browser.refresh()
                         browser.switch_to_alert().accept()
-                        time.sleep(2)
+                        time.sleep(4)
                         html = browser.page_source
                     else:
                         break
@@ -167,9 +199,10 @@ while True:
                 "Cookie": "__jsluid=eb8523c9655107d177806597beb43f57; UM_distinctid=15b0d57141c23d-08caf973d-4349052c-1fa400-15b0d57141d940; tlb_cookie1=114ui_8280; Hm_lvt_d7682ab43891c68a00de46e9ce5b76aa=1492692994; Hm_lpvt_d7682ab43891c68a00de46e9ce5b76aa=1493024386; JSESSIONID=E7E8CC28F2EA0ABAF34E5B0B28A76730-n1:0; tlb_cookie=24query_8080; CNZZDATA1261033118=1201860774-1490573985-%7C1493103540; Hm_lvt_cdb4bc83287f8c1282df45ed61c4eac9=1490577462,1492505367; Hm_lpvt_cdb4bc83287f8c1282df45ed61c4eac9=1493104058",
                 # "Referer": "http://www.gsxt.gov.cn/corp-query-search-1.html"
             }
-            detailurl = 'http://www.gsxt.gov.cn' + xqurl
+            logger.info("获取详情页地址")
+            detailurl = 'http://gd.gsxt.gov.cn' + xqurl
             browser.get(detailurl)
-            time.sleep(0.5)
+            time.sleep(3)
             html = browser.page_source
             if companyname not in html:
                 for cs in range(10):
@@ -209,19 +242,34 @@ while True:
                     itemlist = item.split(':', 1)
                 elif "：" in item:
                     itemlist = item.split('：', 1)
-                item_dict[itemlist[0]] = itemlist[1]
+                item_dict[itemlist[0]] = itemlist[1].strip()
                 pass
+            select = root.xpath('//*[@id="shareholderInfo_wrapper"]//table//tbody/tr')
+            title = ['序号', '股东名称']
+            gd = {}
+            gudong={}
+            for i in select:
+                nom = 0
+                for j in title:
+                    gd[title[nom]] = i.xpath(".//text()")[nom]
+                    nom += 1
+                gudong[gd['序号']]=gd
+            item_dict["股东及出资信息"]=gudong
             print(item_dict)
+            logger.info(item_dict)
+            logger.info("信用网成功爬取")
             insert_db('[dbo].[Python_Serivce_CreditWebGuoJia_Add]',
                       (batchid, companyname, json.dumps(item_dict, ensure_ascii=False)))
             job_finish('39.108.1.170', '3433', 'Platform', batchid, companyid, "0", '1',
-                       "成功爬取")
+                       "信用网成功爬取")
             browser.quit()
             break
 
         except Exception as e:
+            logger.info('爬取失败')
+            logger.info(e)
             job_finish('39.108.1.170', '3433', 'Platform', batchid, companyid, "0", '-1',
-                       "爬取失败")
+                       "信用网爬取失败")
             browser.quit()
             print(e)
             pass

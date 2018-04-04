@@ -24,6 +24,8 @@ import pymssql
 from selenium.webdriver.common.action_chains import ActionChains
 import sys
 import platform
+import logging
+import os
 
 # import requests
 # from pdfminer.converter import PDFPageAggregator
@@ -46,10 +48,32 @@ companyid = "0"
 batchid = mess['batchid']
 companyname = mess['companyname']
 jobname = "抓取数据"
-jobparams = {}
-are = mess['Are']
-jobparams["Are"] = are
-jobparams = json.dumps(jobparams, ensure_ascii=False)
+jobparams = mess['jobparams']
+zh = json.loads(jobparams)['Request']
+if not zh.strip():
+    zh=mess['zh']
+
+
+def create_logger(level=logging.DEBUG, path="task"):
+    # create logger
+    logger_name = "example"
+    logger = logging.getLogger(logger_name)
+    logger.setLevel(level)
+    # create file handler
+    log_path = './logs/{}log.log'.format(path)
+    fh = logging.FileHandler(log_path, encoding='utf8')
+    fh.setLevel(level)
+    # CREATE FORMATTER
+    fmt = "%(asctime)s %(levelname)s %(filename)s %(lineno)d %(thread)d %(process)d %(message)s"
+    datefmt = "%a %d %b %Y %H:%M:%S"
+    formatter = logging.Formatter(fmt, datefmt)
+    # add handler and formatter to logger
+    fh.setFormatter(formatter)
+    logger.addHandler(fh)
+    return logger
+
+
+logger = create_logger(path='gdgs')
 
 
 def insert_db(sql, params):
@@ -105,7 +129,7 @@ try:
     else:
         browser = webdriver.Chrome(executable_path='chromedriver.exe', chrome_options=options)  # 添加driver的路径
     browser.get(
-        url='http://gs.etax-gd.gov.cn/sso/login?service=http://gs.etax-gd.gov.cn/xxmh/html/index.html?bszmFrom=1&t=1479433265984')
+        url='http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/login/login.html?redirectURL=http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/myoffice/myoffice.html')
     wait = ui.WebDriverWait(browser, 8)
     wait.until(lambda browser1: browser1.find_element_by_css_selector("#one1"))
     browser.find_element_by_xpath("//*[@id='userName']").send_keys(zh)  # send_keys：实现往框中输入内容
@@ -126,7 +150,8 @@ try:
 except Exception as e:
     try:
         print("浏览器启动异常")
-        print(e)
+        logger.info("浏览器启动异常")
+        logger.info(e)
         sys.exit()
     except Exception as e:
         print()
@@ -137,8 +162,13 @@ while True:
     except:
         try:
             print("浏览器异常关闭")
+            logger.info("浏览器异常关闭")
+            job_finish('39.108.1.170', '3433', 'Platform', batchid, companyid, "0", '-1',
+                       "爬取失败")
             sys.exit()
         except Exception as e:
+            logger.info("浏览器异常关闭")
+            logger.info(e)
             print(e)
             sys.exit()
     try:
@@ -147,14 +177,20 @@ while True:
     except:
         try:
             print("浏览器异常关闭")
+            logger.info("浏览器异常关闭")
+            job_finish('39.108.1.170', '3433', 'Platform', batchid, companyid, "0", '-1',
+                       "爬取失败")
             sys.exit()
         except Exception as e:
             print(e)
+            logger.info("浏览器异常关闭")
             sys.exit()
     if '欢迎您' in page:
         try:
+            logger.info("登录成功")
             add_task('39.108.1.170', '3433', 'Platform', batchid, '0', '0', companyid, '0',
                      "CUSTOMERINFO", jobname, jobparams)
+            logger.info("任务添加成功")
             b_ck = browser.get_cookies()
             browser.quit()
             dcap = dict(DesiredCapabilities.PHANTOMJS)
@@ -263,7 +299,8 @@ while True:
                     if end >= endflag:
                         break
                 gs_data["基本信息"] = d1
-
+            zh=gs_data["基本信息"]['纳税人识别号（社会信用代码）：']
+            zh=zh.encode("utf-8").decode("utf8")
             if '登记状态信息' in data_dict.keys():
                 biaoti = ["项目内容", "姓名", "身份证件种类", "证件号码", "固定电话", "移动电话", "电子邮箱"]
                 d1 = {}
@@ -333,10 +370,12 @@ while True:
                     if end >= endflag:
                         break
                 d3['总机构情况'] = d1
-                gs_data["总分机构情况"] = d3
+                gs_data["总分机构情况汇总"] = d3
             print(data_dict)
             info = {}
             info['国税'] = gs_data
+            # logger.info(info)
+            logger.info("国税信息获取成功")
 
             # 地税
             browser.switch_to_default_content()
@@ -487,9 +526,11 @@ while True:
                     if end >= endflag:
                         break
                 d3['总机构情况'] = d1
-                ds_data["总分机构情况"] = d3
+                ds_data["总分机构情况汇总"] = d3
             print(ds_data)
             info['地税'] = ds_data
+            # logger.info(info)
+            logger.info("国税信息获取成功")
 
             # 查询季报数据
             browser.get("http://gs.etax-gd.gov.cn/web-tycx/tycx/4thLvlFunTabsInit.do?cdId=513&gnDm=sscx.yhscx.sbzscx")
@@ -529,16 +570,42 @@ while True:
                     if "度预缴纳税申报表" in jsxx[3] and "2017-10-01" in jsxx[6] and "2017-12-31" in jsxx[7]:
                         yyj = jsxx[11]
                         ybt = jsxx[12]
+                        zgjg = jsxx[1]
                         ynsb = {}
                         ynsb['实际已预缴所得税额'] = yyj
                         ynsb['应补(退)所得税额'] = ybt
+                        ynsb["国地标志"] = zgjg
                         info["上季度纳税情况"] = ynsb
+                        logger.info("查询到季报信息")
                         break
+            # 纳税人登记信息
+            browser.get("https://gs.etax-gd.gov.cn/web-sxbl/BsfwtWeb/pages/yhs/rd/ybnsrdjxxcx.html")
+            time.sleep(2)
+            content = browser.page_source
+            root = etree.HTML(content)
+            select = root.xpath('//div[@class="mini-grid-bodyInner"]//tbody/tr')
+            gszgcx = {}
+            for i in select[1:]:
+                tiaomu = {}
+                zgtb = i.xpath('.//text()')
+                title = ['序号', '文字字轨', '纳税人资格认定名称', '有效期起', '有效期止', '认定日期']
+                for j in range(len(zgtb)):
+                    tiaomu[title[j]] = zgtb[j]
+                try:
+                    if "增值税一般纳税人" not in tiaomu["纳税人资格认定名称"]:
+                        continue
+                except:
+                    continue
+                gszgcx[zgtb[0]] = tiaomu
+            info['纳税人资格查询'] = gszgcx
+
+            logger.info(info)
             insert_db('[dbo].[Python_Serivce_GSTaxGuangDong_Add]',
                       ((batchid, companyname, zh, pwd, json.dumps(info, ensure_ascii=False))))
             print("数据插入成功")
+            logger.info("数据插入成功")
             job_finish('39.108.1.170', '3433', 'Platform', batchid, companyid, "0", '1',
-                       "成功爬取")
+                       "国税局成功爬取")
 
             # 获取pdf地址
             # ck = {}
@@ -578,6 +645,8 @@ while True:
             break
 
         except Exception as e:
+            logger.info("国税局爬取失败")
+            logger.info(e)
             print(e)
             browser.quit()
             job_finish('39.108.1.170', '3433', 'Platform', batchid, companyid, "0", '-1',
