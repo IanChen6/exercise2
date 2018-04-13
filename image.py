@@ -38,11 +38,11 @@ def login():
     options.add_argument('disable-infobars')
     options.add_argument("--start-maximized")
     browser = webdriver.Chrome(executable_path='chromedriver.exe', chrome_options=options)
-    # browser = webdriver.Chrome(executable_path='chromedriver', chrome_options=options)
-    browser.set_window_size(2200, 2200)
+    # # browser = webdriver.Chrome(executable_path='chromedriver', chrome_options=options)
+    # browser.set_window_size(2200, 2200)
     # dcap = dict(DesiredCapabilities.PHANTOMJS)
     # dcap["phantomjs.page.settings.userAgent"] = (
-    #     'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36')
+    #     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36')
     # dcap["phantomjs.page.settings.loadImages"] = True
     # service_args = []
     # service_args.append('--webdriver=szgs')
@@ -53,8 +53,8 @@ def login():
     # #     executable_path='/home/tool/phantomjs-2.1.1-linux-x86_64/bin/phantomjs',
     # #     desired_capabilities=dcap)
     # browser.implicitly_wait(10)
-    # browser.viewportSize = {'width': 2200, 'height': 2200}
-    # browser.set_window_size(2200, 2200)
+    browser.viewportSize = {'width': 2200, 'height': 2200}
+    browser.set_window_size(2200, 2200)
     browser.get(
         url='http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/login/login.html?redirectURL=http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/myoffice/myoffice.html')
     wait = ui.WebDriverWait(browser, 8)

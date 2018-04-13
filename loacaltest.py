@@ -19,10 +19,10 @@ postdata={"BatchID":"111",
 "BatchMonth":1,
 "CompanyID":0,
 "CustomerID":0,
-# "TaxId":"440300692516197",#深圳市隆创盛科技有限公司()
-# "TaxPwd":"27930462",
-"TaxId":'91440300MA5EQUCD5J',#bote
-"TaxPwd":"10716674",
+"TaxId":"440300692516197",#深圳市隆创盛科技有限公司()
+"TaxPwd":"abcd1234",
+# "TaxId":'91440300MA5EQUCD5J',#bote
+# "TaxPwd":"10716674",
 # "TaxId":'440300582721683',#和乐手袋
 # "TaxPwd":"84322586",
 # "TaxId":'440300782766261',#深圳市清驰科技有限公司()
@@ -46,7 +46,7 @@ postdata={"BatchID":"111",
 'jobname':'工程1',
 'jobparams':"工作中",
 'Type':'CUSTOMERINFO',
-# 'Request':'登录账号：13590240680 密码：abcd1234',
+'Request':'登录账号：13590240680 密码：abcd1234',
 # "CustomerName":'深圳市芃博科技有限公司'
           }
 # re=requests.post(url="http://120.79.65.131:8080/crawl2local/",data=postdata)

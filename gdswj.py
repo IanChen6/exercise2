@@ -129,7 +129,7 @@ try:
     else:
         browser = webdriver.Chrome(executable_path='chromedriver.exe', chrome_options=options)  # 添加driver的路径
     browser.get(
-        url='http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/login/login.html?redirectURL=http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/myoffice/myoffice.html')
+        url='http://www.etax-gd.gov.cn/sso/login?service=http://www.etax-gd.gov.cn/xxmh/html/index.html?bszmFrom=1&t=1523156103552')
     wait = ui.WebDriverWait(browser, 8)
     wait.until(lambda browser1: browser1.find_element_by_css_selector("#one1"))
     browser.find_element_by_xpath("//*[@id='userName']").send_keys(zh)  # send_keys：实现往框中输入内容
@@ -582,6 +582,11 @@ while True:
             browser.get("https://gs.etax-gd.gov.cn/web-sxbl/BsfwtWeb/pages/yhs/rd/ybnsrdjxxcx.html")
             time.sleep(2)
             content = browser.page_source
+            for i in range(5):
+                if "增值税一般纳税人" not in content:
+                    browser.get("https://gs.etax-gd.gov.cn/web-sxbl/BsfwtWeb/pages/yhs/rd/ybnsrdjxxcx.html")
+                    time.sleep(2)
+                    content = browser.page_source
             root = etree.HTML(content)
             select = root.xpath('//div[@class="mini-grid-bodyInner"]//tbody/tr')
             gszgcx = {}
@@ -590,7 +595,7 @@ while True:
                 zgtb = i.xpath('.//text()')
                 title = ['序号', '文字字轨', '纳税人资格认定名称', '有效期起', '有效期止', '认定日期']
                 for j in range(len(zgtb)):
-                    tiaomu[title[j]] = zgtb[j]
+                    tiaomu[title[j]] = "".join(zgtb[j].split())
                 try:
                     if "增值税一般纳税人" not in tiaomu["纳税人资格认定名称"]:
                         continue

@@ -51,3 +51,39 @@ Tue 03 Apr 2018 18:56:55 INFO guojiaxinyong.py 163 22988 24868 添加任务
 Tue 03 Apr 2018 18:56:59 INFO guojiaxinyong.py 202 22988 24868 获取详情页地址
 Tue 03 Apr 2018 18:57:24 INFO guojiaxinyong.py 259 22988 24868 {'股东及出资信息': {'1': {'股东名称': '胡世文', '序号': '4'}, '3': {'股东名称': '胡世文', '序号': '4'}, '4': {'股东名称': '胡世文', '序号': '4'}, '2': {'股东名称': '胡世文', '序号': '4'}}, '核准日期': '2015年09月25日', '住所': '东莞市横沥镇站前路48号一、二层', '经营范围': '销售：家具、灯饰、家居饰品。', '营业期限至': '', '注册资本': '50.000000万人民币', '营业期限自': '2013年12月06日', '企业名称': '东莞市米爱家具有限公司', '登记机关': '广东省东莞市工商行政管理局', '类型': '有限责任公司(自然人投资或控股)', '登记状态': '在营（开业）企业', '成立日期': '2013年12月06日', '统一社会信用代码': '91441900086767543C', '法定代表人': '郑显锋'}
 Tue 03 Apr 2018 18:57:24 INFO guojiaxinyong.py 260 22988 24868 信用网成功爬取
+Thu 12 Apr 2018 17:10:10 INFO guojiaxinyong.py 123 50136 50144 浏览器启动异常
+Thu 12 Apr 2018 17:10:41 INFO guojiaxinyong.py 123 37996 50156 浏览器启动异常
+Thu 12 Apr 2018 17:13:14 INFO guojiaxinyong.py 160 39492 49440 查询到结果
+Thu 12 Apr 2018 17:13:14 INFO guojiaxinyong.py 163 39492 49440 添加任务
+Thu 12 Apr 2018 17:13:18 INFO guojiaxinyong.py 202 39492 49440 获取详情页地址
+Thu 12 Apr 2018 17:13:18 INFO guojiaxinyong.py 269 39492 49440 爬取失败
+Thu 12 Apr 2018 17:13:18 INFO guojiaxinyong.py 270 39492 49440 name 'xqurl' is not defined
+Thu 12 Apr 2018 17:13:21 INFO guojiaxinyong.py 135 39492 49440 浏览器异常关闭
+Thu 12 Apr 2018 17:16:03 INFO guojiaxinyong.py 160 49612 49188 查询到结果
+Thu 12 Apr 2018 17:16:03 INFO guojiaxinyong.py 163 49612 49188 添加任务
+Thu 12 Apr 2018 17:16:07 INFO guojiaxinyong.py 202 49612 49188 获取详情页地址
+Thu 12 Apr 2018 17:16:11 INFO guojiaxinyong.py 259 49612 49188 {'注册资本': '50.000000万人民币', '登记机关': '广东省东莞市工商行政管理局', '核准日期': '2015年09月25日', '营业期限自': '2013年12月06日', '住所': '东莞市横沥镇站前路48号一、二层', '成立日期': '2013年12月06日', '企业名称': '东莞市米爱家具有限公司', '经营范围': '销售：家具、灯饰、家居饰品。', '营业期限至': '', '登记状态': '在营（开业）企业', '类型': '有限责任公司(自然人投资或控股)', '股东及出资信息': {'4': {'股东名称': '胡世文', '序号': '4'}, '2': {'股东名称': '胡世文', '序号': '4'}, '1': {'股东名称': '胡世文', '序号': '4'}, '3': {'股东名称': '胡世文', '序号': '4'}}, '法定代表人': '郑显锋', '统一社会信用代码': '91441900086767543C'}
+Thu 12 Apr 2018 17:16:11 INFO guojiaxinyong.py 260 49612 49188 信用网成功爬取
+Thu 12 Apr 2018 17:26:27 INFO guojiaxinyong.py 160 50760 50232 查询到结果
+Thu 12 Apr 2018 17:26:27 INFO guojiaxinyong.py 163 50760 50232 添加任务
+Thu 12 Apr 2018 17:26:31 INFO guojiaxinyong.py 270 50760 50232 爬取失败
+Thu 12 Apr 2018 17:26:31 INFO guojiaxinyong.py 271 50760 50232 Expected selector, got <DELIM '/' at 2>
+Thu 12 Apr 2018 17:26:34 INFO guojiaxinyong.py 135 50760 50232 浏览器异常关闭
+Thu 12 Apr 2018 17:29:14 INFO guojiaxinyong.py 160 48488 48780 查询到结果
+Thu 12 Apr 2018 17:29:14 INFO guojiaxinyong.py 163 48488 48780 添加任务
+Thu 12 Apr 2018 17:29:24 INFO guojiaxinyong.py 270 48488 48780 爬取失败
+Thu 12 Apr 2018 17:29:25 INFO guojiaxinyong.py 271 48488 48780 Expected selector, got <DELIM '(' at 7>
+Thu 12 Apr 2018 17:35:48 INFO guojiaxinyong.py 160 48752 51052 查询到结果
+Thu 12 Apr 2018 17:35:48 INFO guojiaxinyong.py 163 48752 51052 添加任务
+Thu 12 Apr 2018 17:35:54 INFO guojiaxinyong.py 271 48752 51052 爬取失败
+Thu 12 Apr 2018 17:35:54 INFO guojiaxinyong.py 272 48752 51052 0
+Thu 12 Apr 2018 17:35:57 INFO guojiaxinyong.py 135 48752 51052 浏览器异常关闭
+Thu 12 Apr 2018 17:36:46 INFO guojiaxinyong.py 160 37424 45340 查询到结果
+Thu 12 Apr 2018 17:36:46 INFO guojiaxinyong.py 163 37424 45340 添加任务
+Thu 12 Apr 2018 17:38:31 INFO guojiaxinyong.py 160 49884 50600 查询到结果
+Thu 12 Apr 2018 17:38:31 INFO guojiaxinyong.py 163 49884 50600 添加任务
+Thu 12 Apr 2018 17:42:42 INFO guojiaxinyong.py 160 33212 47052 查询到结果
+Thu 12 Apr 2018 17:42:42 INFO guojiaxinyong.py 163 33212 47052 添加任务
+Thu 12 Apr 2018 17:43:58 INFO guojiaxinyong.py 160 49296 49708 查询到结果
+Thu 12 Apr 2018 17:43:58 INFO guojiaxinyong.py 163 49296 49708 添加任务
+Thu 12 Apr 2018 17:44:12 INFO guojiaxinyong.py 205 49296 49708 获取详情页地址

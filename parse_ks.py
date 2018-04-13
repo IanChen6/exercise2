@@ -42,7 +42,6 @@ def parse_ndpdf(pdf_path):
         interpreter = PDFPageInterpreter(rsrcmgr, device)
         # 循环遍历列表，每次处理一页的内容
         # doc.get_pages() 获取page列表
-        pagemumber=0
         for page in doc.get_pages():
             # 使用页面解释器来读取
             interpreter.process_page(page)
@@ -57,7 +56,7 @@ def parse_ndpdf(pdf_path):
             xingzhi = []
             bili = []
             guoji = []
-            pagemumber+=1
+
             for out in layout:
                 # 判断是否含有get_text()方法，图片之类的就没有
                 # if hasattr(out,"get_text"):
@@ -66,13 +65,10 @@ def parse_ndpdf(pdf_path):
                     results = out.get_text()
                     # 解析亏损表
                     if a == 1:
-                        if results != "A106000企业所得税弥补亏损明细表\n" and results != "中华人民共和国企业所得税年度纳税申报表（A类）\n" and results != "A000000企业基础信息表\n" and pagemumber!=3:
+                        if results != "A106000企业所得税弥补亏损明细表\n" and results != "中华人民共和国企业所得税年度纳税申报表（A类）\n" and results != "A000000企业基础信息表\n":
                             break
                         else:
-                            if pagemumber==3:
-                                biaoge="A000000企业基础信息表\n"
-                            else:
-                                biaoge = results
+                            biaoge = results
                             gd = False
                     # print(results)
                     # results_last = results
@@ -90,7 +86,7 @@ def parse_ndpdf(pdf_path):
                         if results_last == '金额\n' and a == 11:
                             sz = results.strip("").split("\n")
                             print(sz)
-                        elif a==10 and "%" in results and  "0.00" in results:
+                        elif a == 10 and "%" in results and "0.00" in results:
                             sz = results.strip("").split("\n")
                             print(sz)
                     # 解析基础信息表
@@ -120,8 +116,8 @@ def parse_ndpdf(pdf_path):
                         gd = True
                         gdxx = []
                     if biaoge == "A000000企业基础信息表\n" and gd:
-                        if "证件种类" not in results and "主要股东" not in results and "经济性质" not in results and "投资比例" not in results and "国籍" not in results and "302中国境内" not in results and "公司财务室" not in results \
-                                and "备抵法" not in results and "直接核销法" not in results and "人民币" not in results and "单位财务室" not in results and "证件号码" not in results:
+                        if "证件" not in results and "主要股东" not in results and "经济性质" not in results and "投资比例" not in results and "国籍" not in results and "302中国境内" not in results and "公司财务室" not in results \
+                                and "备抵法" not in results and "直接核销法" not in results and "人民币" not in results:
                             gdxx.append(results)
                     results_last = results
     pdf_dict = {}
@@ -130,14 +126,21 @@ def parse_ndpdf(pdf_path):
         pdf_dict['从业人数'] = jcxx[3]
         pdf_dict['存货计价方法'] = cbjj[1]
         pdf_dict['企业会计准则为'] = kjzzzd
+        if "一般企业" in pdf_dict['企业会计准则为']:
+            pdf_dict['企业会计准则为'] = "一般企业会计准则"
+    except Exception as e:
+        print(e)
+        pdf_dict['所属行业明细'] = ""
+        pdf_dict['从业人数'] = ""
+        pdf_dict['存货计价方法'] = ""
+        pdf_dict['企业会计准则为'] = ""
+    try:
         index = 0
         for gl in gdxx:
             index += 1
-            if "居民身份证" in gl or "营业执照" in gl or "其他单位证件" in gl:
+            if "居民身份证" in gl or "营业执照" in gl:
                 zjhm = gl.replace("\n", "")
-                if "居民身份证" in zjhm[:8]
-                    zjhm = zjhm.split('居民身份证')[1:]
-
+                zjhm = zjhm.split('居民身份证')[1:]
                 clean = []
                 for g in zjhm:
                     if "营业执照" in g:
@@ -147,14 +150,6 @@ def parse_ndpdf(pdf_path):
                             clean.append(yy[0])
                         for zz in yy[1:]:
                             clean.append("营业执照")
-                            clean.append(zz)
-                    elif "其他单位证件" in g:
-                        yy = g.split("其他单位证件")
-                        if len(yy[0]) != 0:
-                            clean.append("居民身份证")
-                            clean.append(yy[0])
-                        for zz in yy[1:]:
-                            clean.append("其他单位证件")
                             clean.append(zz)
                     else:
                         clean.append("居民身份证")
@@ -187,11 +182,17 @@ def parse_ndpdf(pdf_path):
         sb = 0
         for j in range(0, len(clean), 2):
             gdxxdict = {}
-            gdxxdict["证件种类"] = clean[j]
+            if '其他单位证件' in clean[j]:
+                gdxxdict["证件种类"] = "居民身份证"
+            else:
+                gdxxdict["证件种类"] = clean[j]
             gdxxdict["证件号码"] = clean[j + 1]
             gdxxdict["经济性质"] = tzxx[j]
             gdxxdict["投资比例"] = tzxx[j + 1]
-            gdxxdict["国籍"] = gj[sb]
+            if "中华人民" in gj[sb] or "香港" in gj[sb]:
+                gdxxdict["国籍"] = "中国"
+            else:
+                gdxxdict["国籍"] = gj[sb]
             gdxxdict["股东名称"] = xm[sb]
             wc = gdxxdict
             sb += 1
@@ -213,10 +214,7 @@ def parse_ndpdf(pdf_path):
         #     tzfxx6, tzfxx7, tzfxx8, tzfxx9, tzfxx10)
         # self.insert_db("[dbo].[Python_Serivce_GSTaxInfo_AddParent]", params)
     except:
-        pdf_dict['所属行业明细'] = ""
-        pdf_dict['从业人数'] = ""
-        pdf_dict['存货计价方法'] = ""
-        pdf_dict['企业会计准则为'] = ""
+        pass
     pdf_dict['纳税调整后所得'] = sz[18]
     ksmx = {}
     try:
@@ -237,7 +235,7 @@ def parse_ndpdf(pdf_path):
 # parse_ndpdf('年度申报表详情10024417000014718405.pdf')
 # parse_ndpdf('年度申报表详情10024417000014709743.pdf')
 # parse_ndpdf("年度申报表详情10024417000013589901.pdf")
-parse_ndpdf('年度申报表详情10024417000014827345.pdf')
+parse_ndpdf('年度申报表详情10024417000014607039.pdf')
 
 # import tabula
 #

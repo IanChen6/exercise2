@@ -17,15 +17,13 @@ import time
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # 建立连接:
-s.connect(('192.168.18.101', 25532))
+s.connect(('127.0.0.1', 25532))
 
-aa="@1034:48"
+aa="@1039"
 l=len(aa)
 for i in range((128-l)):
     aa+=" "
 by=bytes(aa,'utf8')
 
-add=len(by)
+s.send(by)
 pass
-#1034
-#1035完成

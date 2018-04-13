@@ -41,13 +41,12 @@ def get_all_proxie():
 
 
 if __name__ == "__main__":
-    proxy_list=get_all_proxie()
-    proxy=proxy_list[random.randint(0,len(proxy_list)-1)]
+    # proxy_list=get_all_proxie()
+    # proxy=proxy_list[random.randint(0,len(proxy_list)-1)]
     # print(proxy)
     sess=requests.session()
 
-    sess.proxies=                                              {'http': 'http://bjhz:bjhz@123.207.24.103:7777',
-                                               'https': 'http://bjhz:bjhz@123.207.24.103:7777'}
+    sess.proxies=  {'http': 'http://47.106.138.4:6832', 'https': 'http://47.106.138.4:6832'}
     headers = {'Accept': 'application/json, text/javascript, */*; q=0.01',
                     'Accept-Language': 'zh-CN,zh;q=0.9',
                     'Accept-Encoding': 'gzip, deflate, br',
@@ -66,6 +65,7 @@ if __name__ == "__main__":
     d = sess.get('https://www.szcredit.org.cn/web/gspt/newGSPTDetail3.aspx?ID=f3023f7fa002450f85e117c12b619908',
                  headers=headers)
     d.encoding = 'gbk'
+    ccc=d.apparent_encoding
     if "深圳市芃博科技有限公司" in d.text:
         print("pass")
     else:

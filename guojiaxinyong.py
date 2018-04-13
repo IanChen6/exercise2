@@ -180,8 +180,11 @@ while True:
             rq = PyQuery(result)
             alist = rq('.search_list_item')
             for i in alist:
-                xqurl = PyQuery(i).attr('href')
-                break
+                ad = PyQuery(i)
+                t=ad('.f20').text().replace(" ","")
+                if ad('.f20').text() in companyname:
+                    xqurl = PyQuery(i).attr('href')
+                    break
             # with open('gjxy.html', 'r', encoding='utf') as f:
             #     html = f.read()
             #     f.close()
