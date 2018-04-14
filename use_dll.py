@@ -14,6 +14,7 @@ import base64
 import time
 from urllib.parse import urlparse
 from urllib.parse import parse_qs
+
 import execjs
 from suds.client import Client
 import suds
@@ -30,15 +31,7 @@ def get_js():
         htmlstr = htmlstr + line
         line = f.readline()
     return htmlstr
-def jiami_js():
-    # f = open("D:/WorkSpace/MyWorkSpace/jsdemo/js/des_rsa.js",'r',encoding='UTF-8')
-    f = open("encrypt.js", 'r', encoding='UTF-8')
-    line = f.readline()
-    htmlstr = ''
-    while line:
-        htmlstr = htmlstr + line
-        line = f.readline()
-    return htmlstr
+
 session = requests.session()
 add = session.get("http://dzswj.szgs.gov.cn/api/auth/queryTxUrl?json&_=1522658530831")
 query = urlparse(add.json()['data']).query
@@ -68,16 +61,20 @@ if "tdc.js" in holder.text or "TDC.js" in holder.text:
     ase=False
 else:
     ase=True
-jsstr = jiami_js()
-ctx = execjs.compile(jsstr)
-cdat=ctx.call('getEncryptData','123')
+
+client = suds.client.Client(url="http://39.108.112.203:8023/yzmmove.asmx?wsdl")
+    # client = suds.client.Client(url="http://192.168.18.101:1421/SZYZService.asmx?wsdl")
+resp = requests.get(image_url)
+con = str(base64.b64encode(resp.content))[2:-1]
+auto = client.service.GetYZCodeForDll(con)
+auto = int(auto)
 client = suds.client.Client(url="http://120.79.184.213:8023/yzmmove.asmx?wsdl")
-x_locate = client.service.GetTackXForDll(image_url,y_locte)
-track=client.service.GetTackDataForDll(int(x_locate),cdat,ase)
+# x_locate = client.service.GetTackXForDll(image_url,y_locte)
+track=client.service.GetTackDataForDll(auto,cdat,ase)
 track=json.loads(track)["Data"]
 time_l = str(int(time.time() * 1000))
 ticket_url = 'https://captcha.guard.qcloud.com/cap_union_new_verify?random={}'.format(time_l)
-login_data='aid=1252097171&asig={}&captype=&protocol=https&clientype=2&disturblevel=&apptype=&curenv=open&ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV09XNjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS81My4wLjI3ODUuMTA0IFNhZmFyaS81MzcuMzYgQ29yZS8xLjUzLjM0ODUuNDAwIFFRQnJvd3Nlci85LjYuMTIxOTAuNDAw==&uid=&cap_cd=&height=40&lang=2052&fb=1&theme=&rnd=846062&forcestyle=undefined&rand=0.388811798088319&sess={}&firstvrytype=1&showtype=point&subcapclass=10&vsig={}&ans={},{};&cdata=68&badbdd={}&websig={}&fpinfo=undefined&tlg=1&vlg=0_0_0&vmtime=_&vmData='.format(d['asig'], sess.json()["sess"], vsig,x_locate,y_locte,track,websig)
+login_data='aid=1252097171&asig={}&captype=&protocol=https&clientype=2&disturblevel=&apptype=&curenv=open&ua=TW96aWxsYS81LjAgKFdpbmRvd3MgTlQgMTAuMDsgV09XNjQpIEFwcGxlV2ViS2l0LzUzNy4zNiAoS0hUTUwsIGxpa2UgR2Vja28pIENocm9tZS81My4wLjI3ODUuMTA0IFNhZmFyaS81MzcuMzYgQ29yZS8xLjUzLjM0ODUuNDAwIFFRQnJvd3Nlci85LjYuMTIxOTAuNDAw==&uid=&cap_cd=&height=40&lang=2052&fb=1&theme=&rnd=846062&forcestyle=undefined&rand=0.388811798088319&sess={}&firstvrytype=1&showtype=point&subcapclass=10&vsig={}&ans={},{};&cdata=68&badbdd={}&websig={}&fpinfo=undefined&tlg=1&vlg=0_0_0&vmtime=_&vmData='.format(d['asig'], sess.json()["sess"], vsig,auto,y_locte,track,websig)
 headers={'Host': 'captcha.guard.qcloud.com',
                        'Accept': 'application/json, text/javascript, */*; q=0.01',
                        'Accept-Language': 'zh-CN,zh;q=0.9',
