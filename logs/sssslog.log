@@ -297,3 +297,26 @@ Fri 16 Mar 2018 14:36:45 WARNING dkym.py 1152 5248 Message: unknown error: call 
   (Session info: chrome=65.0.3325.162)
   (Driver info: chromedriver=2.32.498550 (9dec58e66c31bcc53a9ce3c7226f0c1c5810906a),platform=Windows NT 10.0.16299 x86_64)
 
+Fri 20 Apr 2018 15:31:54 WARNING dkym.py 1082 25680 'ksbs' object has no attribute 'customerid'
+Fri 20 Apr 2018 15:31:54 WARNING dkym.py 1083 25680 µÇÂ½Ê§°Ü
+Fri 20 Apr 2018 15:32:06 WARNING dkym.py 1082 24800 'ksbs' object has no attribute 'customerid'
+Fri 20 Apr 2018 15:32:06 WARNING dkym.py 1083 24800 µÇÂ½Ê§°Ü
+Fri 20 Apr 2018 15:32:27 WARNING dkym.py 1082 15792 'ksbs' object has no attribute 'customerid'
+Fri 20 Apr 2018 15:32:27 WARNING dkym.py 1083 15792 µÇÂ½Ê§°Ü
+Fri 20 Apr 2018 15:32:44 WARNING dkym.py 1082 9416 'ksbs' object has no attribute 'customerid'
+Fri 20 Apr 2018 15:38:58 WARNING dkym.py 1083 9416 µÇÂ½Ê§°Ü
+Fri 20 Apr 2018 15:40:00 WARNING dkym.py 1077 8340 'ksbs' object has no attribute 'get_js'
+Fri 20 Apr 2018 15:40:01 WARNING dkym.py 1078 8340 µÇÂ½Ê§°Ü
+Fri 20 Apr 2018 15:41:11 INFO dkym.py 258 25656 ticket:3fejzgR2wFdgrHiagE2OhVnzL6YSi9FGm1Af5nOk0L4wlSpw3nEj-MAqgaczkZib5xnl6P9qhMw*
+Fri 20 Apr 2018 15:42:20 INFO dkym.py 258 24340 ticket:
+Fri 20 Apr 2018 15:42:23 INFO dkym.py 277 24340 {"nsrsbh":"440300570032864","nsrpwd":"fd8e9b40f923e2eab0e9f7197cf022e7b821c210","tagger":"","redirectURL":"","time":"2018-04-20 15:42:22"}
+Fri 20 Apr 2018 15:42:34 INFO dkym.py 258 24340 ticket:DHRzP7TWGfZYrlQTT3xrLu0dWiB1MTL7Cq_-hYfKo8CMsXoDpX4Y9wXffByHFGNia-QFq4v8Yyw*
+Fri 20 Apr 2018 15:42:34 INFO dkym.py 277 24340 {"nsrsbh":"440300570032864","nsrpwd":"fd8e9b40f923e2eab0e9f7197cf022e7b821c210","tagger":"DHRzP7TWGfZYrlQTT3xrLu0dWiB1MTL7Cq_-hYfKo8CMsXoDpX4Y9wXffByHFGNia-QFq4v8Yyw*","redirectURL":"","time":"2018-04-20 15:42:34"}
+Fri 20 Apr 2018 16:11:30 INFO dkym.py 106 28100 ¿ªÊ¼µÇÂ¼
+Fri 20 Apr 2018 16:11:55 INFO dkym.py 197 28100 HTTPSConnectionPool(host='captcha.guard.qcloud.com', port=443): Read timed out.
+Fri 20 Apr 2018 16:12:19 INFO dkym.py 106 27548 ¿ªÊ¼µÇÂ¼
+Fri 20 Apr 2018 16:13:06 INFO dkym.py 279 27548 ticket:Ids_FiW2gVmat6ATnz53XuVbB4r18XJitfwF0-Lf-3D_QFbZuWWXej91Awc3UwhAZZzlq0JfJHM*
+Fri 20 Apr 2018 16:13:10 INFO dkym.py 298 27548 {"nsrsbh":"440300570032864","nsrpwd":"fd8e9b40f923e2eab0e9f7197cf022e7b821c210","tagger":"Ids_FiW2gVmat6ATnz53XuVbB4r18XJitfwF0-Lf-3D_QFbZuWWXej91Awc3UwhAZZzlq0JfJHM*","redirectURL":"","time":"2018-04-20 16:13:09"}
+Fri 20 Apr 2018 19:38:10 INFO dkym.py 106 13860 ¿ªÊ¼µÇÂ¼
+Fri 20 Apr 2018 19:38:10 WARNING dkym.py 1100 13860 Expecting value: line 1 column 1 (char 0)
+Fri 20 Apr 2018 19:38:10 WARNING dkym.py 1101 13860 µÇÂ½Ê§°Ü

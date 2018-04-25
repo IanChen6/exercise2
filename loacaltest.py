@@ -13,6 +13,7 @@
 #完善公司信息
 import requests
 
+print('\u897f\u65af(\u6df1\u5733)\u4f01\u4e1a\u7ba1\u7406\u54a8\u8be2\u6709\u9650\u516c\u53f8')
 headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"}
 postdata={"BatchID":"111",
 "BatchYear":2018,
@@ -21,8 +22,8 @@ postdata={"BatchID":"111",
 "CustomerID":0,
 # "TaxId":"440300692516197",#深圳市隆创盛科技有限公司()
 # "TaxPwd":"abcd1234",
-"TaxId":'91440300MA5EQUCD5J',#bote
-"TaxPwd":"10716674",
+"TaxId":'440300699076358',#bote
+"TaxPwd":"82394249",
 # "TaxId":'440300582721683',#和乐手袋
 # "TaxPwd":"84322586",
 # "TaxId":'440300782766261',#深圳市清驰科技有限公司()

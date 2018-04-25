@@ -10,13 +10,19 @@
                    2017/11/22:
 -------------------------------------------------
 """
+import base64
 import decimal
 import calendar
 import hashlib
 import json
 import platform
+import random
 from decimal import *
+from urllib.parse import urlparse, parse_qs
+import queue
+import execjs
 import requests
+from requests.adapters import HTTPAdapter
 from suds.client import Client
 import suds
 import re
@@ -27,6 +33,8 @@ import time
 from selenium import webdriver
 from selenium.webdriver.support import ui
 import logging
+
+from urllib3 import Retry
 
 
 def create_logger(level=logging.DEBUG, path="ssss"):
@@ -81,44 +89,72 @@ class ksbs(object):
     def jiami(self):
         h = hashlib.sha1(self.pwd.encode('utf8')).hexdigest()
         return h
-
-    def taggertwo(self, tupian, md):
-        while True:
-            try:
-                client = suds.client.Client(url="http://39.108.112.203:8701/SZYZService.asmx?wsdl")
-                result = client.service.SetYZImg(123456, "1215454545", "pyj", md, tupian)
-                for i in range(30):
-                    result1 = client.service.GetYZCode(md)
-                    if result1 is not None:
-                        result1 = str(result1)
-                        return result1
-                    time.sleep(10)
-            except Exception as e:
-                print(e)
-            break
-
+    def get_js(self):
+        # f = open("D:/WorkSpace/MyWorkSpace/jsdemo/js/des_rsa.js",'r',encoding='UTF-8')
+        # f = open("/home/mycode/localcredit/cdata.js", 'r', encoding='UTF-8')
+        f = open("cdata.js", 'r', encoding='UTF-8')
+        line = f.readline()
+        htmlstr = ''
+        while line:
+            htmlstr = htmlstr + line
+            line = f.readline()
+        return htmlstr
     def tagger(self, tupian, md):
         while True:
+            # formdata = {'CompanyID': 123456, 'BatchID': "1215454545", 'JobName': "pyj", 'CodeMD5': md, 'CodeData': tupian}
+            # resp=requests.get(url="http://192.168.18.101:1421/SZYZService.asmx?wsdl",data=formdata)
             try:
                 client = suds.client.Client(url="http://39.108.112.203:8701/SZYZService.asmx?wsdl")
+                # client = suds.client.Client(url="http://192.168.18.101:1421/SZYZService.asmx?wsdl")
                 auto = client.service.GetYZCodeForDll(tupian)
                 if auto is not None:
                     result1 = str(auto)
                     return result1
                 if auto is None:
                     return auto
+                # result = client.service.SetYZImg(123456, "1215454545", "pyj", md, tupian)
+                # # flag = login("91440300MA5DRRFB45", "10284784", result)
+                # for i in range(30):
+                #     result1 = client.service.GetYZCode(md)
+                #     if result1 is not None:
+                #         result1 = str(result1)
+                #         return result1
+                #     time.sleep(10)
             except Exception as e:
-                print(e)
+                self.logger.warn(e)
             break
 
     def login(self):
         try_times = 0
-        while try_times <= 14:
-            print("开始登陆")
+        user = self.user
+        have_backup = True
+        while try_times <= 20:
+            self.logger.info('customerid:{},开始尝试登陆'.format(self.customerid))
             try_times += 1
             if try_times > 10:
-                time.sleep(1)
+                time.sleep(2)
             session = requests.session()
+            # proxy_list = get_all_proxie()
+            # proxy = proxy_list[random.randint(0, len(proxy_list) - 1)]
+            proxy_list = [
+                {'http': 'http://112.74.37.197:6832', 'https': 'http://112.74.37.197:6832'},
+                {'http': 'http://120.77.147.59:6832', 'https': 'http://120.77.147.59:6832'},
+                {'http': 'http://120.79.188.47:6832', 'https': 'http://120.79.188.47:6832'},
+                {'http': 'http://120.79.190.239:6832', 'https': 'http://120.79.190.239:6832'},
+                {'http': 'http://39.108.220.10:6832', 'https': 'http://39.108.220.10:6832'},
+                {'http': 'http://47.106.138.4:6832', 'https': 'http://47.106.138.4:6832'},
+                {'http': 'http://47.106.142.153:6832', 'https': 'http://47.106.142.153:6832'},
+                {'http': 'http://47.106.146.171:6832', 'https': 'http://47.106.146.171:6832'},
+                {'http': 'http://47.106.136.116:6832', 'https': 'http://47.106.136.116:6832'},
+                {'http': 'http://47.106.135.170:6832', 'https': 'http://47.106.135.170:6832'},
+                {'http': 'http://47.106.137.245:6832', 'https': 'http://47.106.137.245:6832'},
+                {'http': 'http://47.106.137.212:6832', 'https': 'http://47.106.137.212:6832'},
+                {'http': 'http://39.108.167.244:6832', 'https': 'http://39.108.167.244:6832'},
+                {'http': 'http://47.106.146.3:6832', 'https': 'http://47.106.146.3:6832'},
+                {'http': 'http://47.106.128.33:6832', 'https': 'http://47.106.128.33:6832'}
+            ]
+            proxy = proxy_list[random.randint(0, 14)]
+            session.proxies = proxy
             headers = {'Host': 'dzswj.szgs.gov.cn',
                        'Accept': 'application/json, text/javascript, */*; q=0.01',
                        'Accept-Language': 'zh-CN,zh;q=0.8',
@@ -141,22 +177,32 @@ class ksbs(object):
             m.update(tupian1)
             md = m.hexdigest()
             print(md)
+            # logger.info("customerid:{},:{}".format(self.customerid,tupian))
             tag = self.tagger(tupian, md)
+            self.logger.info("customerid:{}，获取验证码为：{}".format(self.customerid, tag))
             if tag is None:
                 continue
             jyjg = session.post(url='http://dzswj.szgs.gov.cn/api/checkClickTipCaptcha', data=tag)
+            self.logger.info("customerid:{}，验证验证码{}".format(self.customerid, tag))
             time_l = time.localtime(int(time.time()))
             time_l = time.strftime("%Y-%m-%d %H:%M:%S", time_l)
+            self.logger.info("customerid:{}，转换tag".format(self.customerid))
             tag = json.dumps(tag)
+            self.logger.info("customerid:{}，转换tag完成".format(self.customerid))
+            self.logger.info("customerid:{}，{},{},{},{}".format(self.customerid, self.user, self.jiami(), tag, time_l))
             login_data = '{"nsrsbh":"%s","nsrpwd":"%s","redirectURL":"","tagger":%s,"time":"%s"}' % (
-                self.taxid, self.jiami(), tag, time_l)
+                user, self.jiami(), tag, time_l)
             login_url = 'http://dzswj.szgs.gov.cn/api/auth/clientWt'
             resp = session.post(url=login_url, data=login_data)
+            self.logger.info(login_data)
+            self.logger.info("customerid:{},成功post数据".format(self.customerid))
             # panduan=resp.json()['message']
+            # self.logger(panduan)
             try:
                 if "验证码正确" in jyjg.json()['message']:
                     if "登录成功" in resp.json()['message']:
                         print('登录成功')
+                        self.logger.info('customerid:{}pass'.format(self.customerid))
                         cookies = {}
                         for (k, v) in zip(session.cookies.keys(), session.cookies.values()):
                             cookies[k] = v
@@ -164,71 +210,15 @@ class ksbs(object):
                     elif "账户和密码不匹配" in resp.json()['message'] or "不存在" in resp.json()['message'] or "已注销" in \
                             resp.json()['message']:
                         print('账号和密码不匹配')
+                        self.logger.info('customerid:{}账号和密码不匹配'.format(self.customerid))
                         status = "账号和密码不匹配"
                         return status
                     else:
                         time.sleep(3)
             except Exception as e:
-                print(e)
-        try_handed = 0
-        while try_handed <= 3:
-            try_handed += 1
-            session = requests.session()
-            # proxy_list = get_all_proxie()
-            # proxy = proxy_list[random.randint(0, len(proxy_list) - 1)]
-            try:
-                session.proxies = sys.argv[1]
-            except:
-                print("未传入代理参数")
-            # session.proxies = {'https': 'http://116.22.211.55:6897', 'http': 'http://116.22.211.55:6897'}
-            headers = {'Host': 'dzswj.szgs.gov.cn',
-                       'Accept': 'application/json, text/javascript, */*; q=0.01',
-                       'Accept-Language': 'zh-CN,zh;q=0.8',
-                       'Content-Type': 'application/json; charset=UTF-8',
-                       'Referer': 'http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/login/login.html',
-                       'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36',
-                       'x-form-id': 'mobile-signin-form',
-                       'X-Requested-With': 'XMLHttpRequest',
-                       'Origin': 'http://dzswj.szgs.gov.cn'}
-            session.get("http://dzswj.szgs.gov.cn/BsfwtWeb/apps/views/login/login.html", headers=headers)
-            captcha_url = 'http://dzswj.szgs.gov.cn/tipCaptcha'
-            tupian_resp = session.get(url=captcha_url, timeout=10)
-            tupian_resp.encoding = 'utf8'
-            tupian = tupian_resp.json()
-            image = tupian['image']
-            tipmessage = tupian["tipMessage"]
-            tupian = json.dumps(tupian, ensure_ascii=False)
-            m = hashlib.md5()
-            tupian1 = tupian.encode(encoding='utf8')
-            m.update(tupian1)
-            md = m.hexdigest()
-            print(md)
-            tag = self.taggertwo(tupian, md)
-            jyjg = session.post(url='http://dzswj.szgs.gov.cn/api/checkClickTipCaptcha', data=tag)
-            time_l = time.localtime(int(time.time()))
-            time_l = time.strftime("%Y-%m-%d %H:%M:%S", time_l)
-            tag = json.dumps(tag)
-            login_data = '{"nsrsbh":"%s","nsrpwd":"%s","redirectURL":"","tagger":%s,"time":"%s"}' % (
-                self.taxid, self.jiami(), tag, time_l)
-            login_url = 'http://dzswj.szgs.gov.cn/api/auth/clientWt'
-            resp = session.post(url=login_url, data=login_data)
-            panduan = resp.json()['message']
-            if "验证码正确" in jyjg.json()['message']:
-                if "登录成功" in resp.json()['message']:
-                    print('登录成功')
-                    cookies = {}
-                    for (k, v) in zip(session.cookies.keys(), session.cookies.values()):
-                        cookies[k] = v
-                    return cookies
-                elif "账户和密码不匹配" in resp.json()['message'] or "不存在" in resp.json()['message'] or "已注销" in resp.json()[
-                    'message']:
-                    print('账号和密码不匹配')
-                    status = "账号和密码不匹配"
-                    return status
-                else:
-                    time.sleep(3)
-            else:
-                print("重试")
+                self.logger.warn("customerid:{}登录失败".format(self.customerid))
+            self.logger.warn("customerid:{}登录失败,开始重试".format(self.customerid))
+        self.logger.warn("{}登陆失败".format(self.customerid))
         return False
 
     def apply(self, browser):
